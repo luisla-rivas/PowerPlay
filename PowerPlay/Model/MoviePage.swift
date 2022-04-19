@@ -25,7 +25,7 @@ struct MoviePage: Codable {
 }
 
 // MARK: - Result
-struct Result: Codable {
+struct Result: Codable, Identifiable {
     let backdropPath, firstAirDate: String
     let genreIDS: [Int]
     let id: Int

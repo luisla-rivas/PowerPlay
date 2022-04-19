@@ -6,34 +6,37 @@
 //
 
 import Foundation
+import Combine
 
-final class MoviePagesVM {
-    var pages:[MoviePage]=[]
-    private let urlTMDB = "https://api.themoviedb.org/3/tv/popular?api_key=c6aeee577586ba38e487b74dfede5deb&language=en-US&page=1"
+final class MoviePagesVM: ObservableObject {
     
-    func carga() async {
+    @Published var currentPage: MoviePage? = nil
+    
+    private let urlTMDB = "https://api.themoviedb.org/3/tv/popular?api_key=c6aeee577586ba38e487b74dfede5deb&language=en-US&page="
+    
+    func carga(_ pageNum: Int) async {
         do {
-            pages = try await cargaMoviePages()
+            currentPage = try await cargaMoviePage(pageNum)
             
         } catch {
-            print("Erro at loadig \(error)")
+            print("Error at loading \(error)")
         }
     }
     
-    func cargaMoviePages() async throws -> [MoviePage] {
-        guard let url = URL(string: urlTMDB) else {
-            return []
+    func cargaMoviePage(_ pagNum: Int) async throws -> MoviePage? {
+        guard let url = URL(string: urlTMDB+"\(pagNum)") else {
+            return nil
         }
         let (data, response) = try await URLSession.shared.data(from: url)
         guard (response as? HTTPURLResponse)?.statusCode == 200 else {
             throw URLError(.badServerResponse)
         }
               
-        return try JSONDecoder().decode([MoviePage].self, from: data)
+        return try JSONDecoder().decode(MoviePage.self, from: data)
     }
     
     
-    let preview:[MoviePage]=[MoviePage(page: 1,
+    let preview:MoviePage = MoviePage(page: 1,
         results: [
             Result(backdropPath: "/jtER3n8XNzZTuo6ADt7VlyXirPp.jpg",
                  firstAirDate:  "2022-03-30",
@@ -62,5 +65,5 @@ final class MoviePagesVM {
                     voteAverage: 8.7,
                     voteCount: 437)],
         totalPages: 6427,
-        totalResults: 128532)]
+        totalResults: 128532)
 }
