@@ -16,6 +16,7 @@
 		A0CA63FC280F0E5B0052DA57 /* PowerPlayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CA63FB280F0E5B0052DA57 /* PowerPlayTests.swift */; };
 		A0CA6406280F0E5B0052DA57 /* PowerPlayUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CA6405280F0E5B0052DA57 /* PowerPlayUITests.swift */; };
 		A0CA6408280F0E5B0052DA57 /* PowerPlayUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CA6407280F0E5B0052DA57 /* PowerPlayUITestsLaunchTests.swift */; };
+		A0CA6415280F14BC0052DA57 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CA6414280F14BC0052DA57 /* Movie.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,7 @@
 		A0CA6401280F0E5B0052DA57 /* PowerPlayUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PowerPlayUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0CA6405280F0E5B0052DA57 /* PowerPlayUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PowerPlayUITests.swift; sourceTree = "<group>"; };
 		A0CA6407280F0E5B0052DA57 /* PowerPlayUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PowerPlayUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		A0CA6414280F14BC0052DA57 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 				A0CA63E7280F0E580052DA57 /* ContentView.swift */,
 				A0CA63E9280F0E5B0052DA57 /* Assets.xcassets */,
 				A0CA63EE280F0E5B0052DA57 /* Persistence.swift */,
+				A0CA6416280F14ED0052DA57 /* Model */,
 				A0CA63F0280F0E5B0052DA57 /* PowerPlay.xcdatamodeld */,
 				A0CA63EB280F0E5B0052DA57 /* Preview Content */,
 			);
@@ -131,6 +134,14 @@
 				A0CA6407280F0E5B0052DA57 /* PowerPlayUITestsLaunchTests.swift */,
 			);
 			path = PowerPlayUITests;
+			sourceTree = "<group>";
+		};
+		A0CA6416280F14ED0052DA57 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A0CA6414280F14BC0052DA57 /* Movie.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -263,6 +274,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A0CA6415280F14BC0052DA57 /* Movie.swift in Sources */,
 				A0CA63EF280F0E5B0052DA57 /* Persistence.swift in Sources */,
 				A0CA63F2280F0E5B0052DA57 /* PowerPlay.xcdatamodeld in Sources */,
 				A0CA63E8280F0E580052DA57 /* ContentView.swift in Sources */,
