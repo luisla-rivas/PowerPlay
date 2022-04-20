@@ -14,7 +14,7 @@ final class MoviePagesVM: ObservableObject {
     
     private let urlTMDB = "https://api.themoviedb.org/3/tv/popular?api_key=c6aeee577586ba38e487b74dfede5deb&language=en-US&page="
     
-    func carga(_ pageNum: Int) async {
+    func carga(_ pageNum: Int) async throws {
         do {
             currentPage = try await cargaMoviePage(pageNum)
             

@@ -18,25 +18,49 @@ struct ContentView: View {
 //        animation: .default)
     //private var items: FetchedResults<Item>
     
-    @EnvironmentObject var moviePageVM: MoviePagesVM
-//    private let movies: [Result]
+    @EnvironmentObject var moviePage: MoviePagesVM
+
     var currentNumberPage: Int
-    private var movies: [Result]
+//    private var movies: [Result]
     
     var body: some View {
         NavigationView {
            List {
-               ForEach(movies) { movie in
+               ForEach(MoviePagesVM().preview.results) { movie in
                     NavigationLink {
                         Text("link")
 //                        Text("Item at \(item.timestamp!, formatter: itemFormatter)")
                     } label: {
+                        AsyncImage(url: URL(string:"https://image.tmdb.org/t/p/w500\(movie.posterPath)")) { image in
+                            image.resizable()
+                                .scaledToFit()
+                                .frame(width: 70, height: 70, alignment: .leading)
+                                //.clipShape(Circle())
+                            } placeholder: {
+                                Image(systemName: "film")
+                                    .font(.largeTitle)
+                            }
+                    
+//                            AsyncImage(url: URL(string:"https://imag.tmdb.org/t/p/w500\(path)")) { image in
+//                                image
+//                                    .res
+//
+//                            }
+//                                .frame(width: 100, height: 100)
+//                        } else {
+//                            Image(systemName:"film")
+//
+//                        }
+                            
+
 //                        Text(item.timestamp!, formatter: itemFormatter)
                         Text(movie.name)
                     }
                 }
 //                .onDelete(perform: deleteItems)
             }
+           .navigationTitle("Movies")
+           .navigationViewStyle(.automatic)
 //            .toolbar {
 //                ToolbarItem(placement: .navigationBarTrailing) {
 //                    EditButton()
@@ -48,12 +72,15 @@ struct ContentView: View {
 //                }
 //            }
 //            Text("Select an item")
+            Spacer()
         }
+
+        
     //TODO: Fix
         .task {
             do {
-                try? await moviePageVM.carga(currentNumberPage)
-                movies = moviePageVM.results
+                try await moviePage.carga(currentNumberPage)
+//                movies = moviePage.results
             } catch {
                 print("Error: \(error)")
             }
@@ -103,8 +130,8 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView(currentNumberPage: 1)
 //            .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
-            .environmentObject(MoviePagesVM().preview)
+            .environmentObject(MoviePagesVM())
     }
 }
