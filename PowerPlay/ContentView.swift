@@ -26,10 +26,10 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
            List {
-               ForEach(MoviePagesVM().preview.results) { movie in
+               ForEach(moviePage.currentPage?.results ?? MoviePagesVM().preview.results) { movie in
                     NavigationLink {
-                        Text("link")
-//                        Text("Item at \(item.timestamp!, formatter: itemFormatter)")
+                        MovieDetailView(movie: movie)
+
                     } label: {
                         AsyncImage(url: URL(string:"https://image.tmdb.org/t/p/w500\(movie.posterPath)")) { image in
                             image.resizable()
@@ -41,20 +41,15 @@ struct ContentView: View {
                                     .font(.largeTitle)
                             }
                     
-//                            AsyncImage(url: URL(string:"https://imag.tmdb.org/t/p/w500\(path)")) { image in
-//                                image
-//                                    .res
-//
-//                            }
-//                                .frame(width: 100, height: 100)
-//                        } else {
-//                            Image(systemName:"film")
-//
-//                        }
-                            
-
+                          
 //                        Text(item.timestamp!, formatter: itemFormatter)
-                        Text(movie.name)
+                        VStack(alignment: .leading, spacing: 5) {
+                            Text(movie.name)
+                            Text(movie.originalName)
+                                .font(.footnote)
+                            PopularityAndRateView(movie: movie, showVotes: false)
+                            .font(.footnote)
+                        }
                     }
                 }
 //                .onDelete(perform: deleteItems)
