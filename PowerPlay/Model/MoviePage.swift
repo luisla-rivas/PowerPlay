@@ -5,6 +5,7 @@
 //  Created by Luis Lasierra on 19/4/22.
 //
 // This file was generated from JSON Schema using quicktype, do not modify it directly.
+// https://app.quicktype.io
 // To parse the JSON, add this file to your project and do:
 //
 //   let welcome = try? newJSONDecoder().decode(MoviePage.self, from: jsonData)
@@ -58,4 +59,6 @@ enum OriginalLanguage: String, Codable {
     case en = "en"
     case es = "es"
 }
+
+
 

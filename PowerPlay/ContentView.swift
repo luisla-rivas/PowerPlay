@@ -19,7 +19,8 @@ struct ContentView: View {
     //private var items: FetchedResults<Item>
     
     @EnvironmentObject var moviePage: MoviePagesVM
-
+    @EnvironmentObject var genresModel: GenresVM
+    
     var currentNumberPage: Int
 //    private var movies: [Result]
     
@@ -54,7 +55,7 @@ struct ContentView: View {
                 }
 //                .onDelete(perform: deleteItems)
             }
-           .navigationTitle("Movies")
+           .navigationTitle("Popular movies")
            .navigationViewStyle(.automatic)
 //            .toolbar {
 //                ToolbarItem(placement: .navigationBarTrailing) {
@@ -69,8 +70,6 @@ struct ContentView: View {
 //            Text("Select an item")
             Spacer()
         }
-
-        
     //TODO: Fix
         .task {
             do {
