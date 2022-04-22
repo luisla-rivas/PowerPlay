@@ -13,8 +13,10 @@
 		A05D76E0281170A000B6B865 /* Genres.swift in Sources */ = {isa = PBXBuildFile; fileRef = A05D76DF2811709F00B6B865 /* Genres.swift */; };
 		A05D76E2281170D800B6B865 /* GenresVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = A05D76E1281170D800B6B865 /* GenresVM.swift */; };
 		A08CD7552812901400929427 /* GenresListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08CD7542812901400929427 /* GenresListView.swift */; };
+		A0A6F2F92812E19C004893CE /* PosterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A6F2F82812E19C004893CE /* PosterView.swift */; };
+		A0A6F2FB2813013B004893CE /* SettingsFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A6F2FA2813013B004893CE /* SettingsFactory.swift */; };
 		A0CA63E6280F0E580052DA57 /* PowerPlayApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CA63E5280F0E580052DA57 /* PowerPlayApp.swift */; };
-		A0CA63E8280F0E580052DA57 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CA63E7280F0E580052DA57 /* ContentView.swift */; };
+		A0CA63E8280F0E580052DA57 /* PopularMoviesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CA63E7280F0E580052DA57 /* PopularMoviesListView.swift */; };
 		A0CA63EA280F0E5B0052DA57 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0CA63E9280F0E5B0052DA57 /* Assets.xcassets */; };
 		A0CA63ED280F0E5B0052DA57 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0CA63EC280F0E5B0052DA57 /* Preview Assets.xcassets */; };
 		A0CA63EF280F0E5B0052DA57 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CA63EE280F0E5B0052DA57 /* Persistence.swift */; };
@@ -50,9 +52,11 @@
 		A05D76E1281170D800B6B865 /* GenresVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenresVM.swift; sourceTree = "<group>"; };
 		A08CD7542812901400929427 /* GenresListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenresListView.swift; sourceTree = "<group>"; };
 		A08CD7562812B1C400929427 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		A0A6F2F82812E19C004893CE /* PosterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PosterView.swift; sourceTree = "<group>"; };
+		A0A6F2FA2813013B004893CE /* SettingsFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsFactory.swift; sourceTree = "<group>"; };
 		A0CA63E2280F0E580052DA57 /* PowerPlay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PowerPlay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0CA63E5280F0E580052DA57 /* PowerPlayApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PowerPlayApp.swift; sourceTree = "<group>"; };
-		A0CA63E7280F0E580052DA57 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		A0CA63E7280F0E580052DA57 /* PopularMoviesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularMoviesListView.swift; sourceTree = "<group>"; };
 		A0CA63E9280F0E5B0052DA57 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A0CA63EC280F0E5B0052DA57 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		A0CA63EE280F0E5B0052DA57 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
@@ -117,10 +121,12 @@
 			children = (
 				A08CD7562812B1C400929427 /* Info.plist */,
 				A0CA63E5280F0E580052DA57 /* PowerPlayApp.swift */,
-				A0CA63E7280F0E580052DA57 /* ContentView.swift */,
+				A0CA63E7280F0E580052DA57 /* PopularMoviesListView.swift */,
+				A0A6F2FA2813013B004893CE /* SettingsFactory.swift */,
 				A04B8B84281047B400F2677C /* MovieDetailView.swift */,
 				A0DBB89228107588002670EA /* PopularityAndRateView.swift */,
 				A08CD7542812901400929427 /* GenresListView.swift */,
+				A0A6F2F82812E19C004893CE /* PosterView.swift */,
 				A0CA63E9280F0E5B0052DA57 /* Assets.xcassets */,
 				A0CA63EE280F0E5B0052DA57 /* Persistence.swift */,
 				A0CA6416280F14ED0052DA57 /* Model */,
@@ -301,12 +307,14 @@
 				A08CD7552812901400929427 /* GenresListView.swift in Sources */,
 				A0DBB89328107588002670EA /* PopularityAndRateView.swift in Sources */,
 				A0CA63EF280F0E5B0052DA57 /* Persistence.swift in Sources */,
+				A0A6F2FB2813013B004893CE /* SettingsFactory.swift in Sources */,
 				A05D76E2281170D800B6B865 /* GenresVM.swift in Sources */,
 				A0CA63F2280F0E5B0052DA57 /* PowerPlay.xcdatamodeld in Sources */,
-				A0CA63E8280F0E580052DA57 /* ContentView.swift in Sources */,
+				A0CA63E8280F0E580052DA57 /* PopularMoviesListView.swift in Sources */,
 				A0CA6418280F1A490052DA57 /* MoviePagesVM.swift in Sources */,
 				A0CA63E6280F0E580052DA57 /* PowerPlayApp.swift in Sources */,
 				A04B8B85281047B400F2677C /* MovieDetailView.swift in Sources */,
+				A0A6F2F92812E19C004893CE /* PosterView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -395,7 +403,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -449,7 +457,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -485,7 +493,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -515,7 +523,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

@@ -8,7 +8,7 @@
 import SwiftUI
 import CoreData
 
-struct ContentView: View {
+struct PopularMoviesListView: View {
 //    @Environment(\.managedObjectContext) private var viewContext
 //
 //
@@ -19,14 +19,14 @@ struct ContentView: View {
     //private var items: FetchedResults<Item>
     
     @EnvironmentObject var moviePage: MoviePagesVM
+    //@EnvironmentObject var set    tings: SettingsFactory
     
-    var currentNumberPage: Int
-//    private var movies: [Result]
+    @State private var currentNumberPage: Int = 1
     
     var body: some View {
         NavigationView {
            List {
-               ForEach(moviePage.movies) { movie in
+               ForEach(moviePage.currentPage.results) { movie in
                     NavigationLink {
                         MovieDetailView(movie: movie)
 
@@ -39,6 +39,7 @@ struct ContentView: View {
                             } placeholder: {
                                 Image(systemName: "film")
                                     .font(.largeTitle)
+                                    .frame(width: 70, alignment: .center)
                             }
                     
                           
@@ -56,22 +57,39 @@ struct ContentView: View {
             }
            .navigationTitle("Popular movies")
            .navigationViewStyle(.automatic)
-//            .toolbar {
-//                ToolbarItem(placement: .navigationBarTrailing) {
-//                    EditButton()
-//                }
-//                ToolbarItem {
-//                    Button(action: addItem) {
-//                        Label("Add Item", systemImage: "plus")
-//                    }
-//                }
-//            }
-//            Text("Select an item")
-            Spacer()
+           .toolbar {
+               ToolbarItemGroup(placement: .bottomBar) {
+                   Button(action: {
+                       if currentNumberPage > 1 {
+                           currentNumberPage -= 1
+
+                       }
+                   }, label: {
+                       Image(systemName: "chevron.left")
+                   })
+                   Spacer()
+                   //Text("\(moviePage.currentPage.page)/\(moviePage.currentPage.totalPages)")
+                   Text("\(currentNumberPage)")
+                   Spacer()
+                
+                   Button(action: {
+                       if currentNumberPage < moviePage.currentPage.totalPages {
+                           currentNumberPage += 1
+                       }
+                   }, label: {
+                       Image(systemName: "chevron.right")
+                   })
+               }
+
+           }
+            //Spacer()
         }
+
+    
         .task {
             do {
                 try await moviePage.load(currentNumberPage)
+                print("moviePage.load")
             } catch {
                 print("Error: \(error)")
             }
@@ -118,10 +136,10 @@ struct ContentView: View {
 //    return formatter
 //}()
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView(currentNumberPage: 1)
-//            .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
-            .environmentObject(MoviePagesVM())
-    }
-}
+//struct ContentView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        PopularMoviesListView(currentNumberPage: $currentNumberPage)
+////            .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
+//            .environmentObject(MoviePagesVM())
+//    }
+//}
