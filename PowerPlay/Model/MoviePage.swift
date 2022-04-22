@@ -27,13 +27,13 @@ struct MoviePage: Codable {
 
 // MARK: - Result
 struct Result: Codable, Identifiable {
-    let backdropPath, firstAirDate: String
+    let backdropPath: String?
+    let firstAirDate: String
     let genreIDS: [Int]
     let id: Int
     let name: String
     let originCountry: [String]
-    let originalLanguage: OriginalLanguage
-    let originalName, overview: String
+    let originalLanguage, originalName, overview: String
     let popularity: Double
     let posterPath: String
     let voteAverage: Double
@@ -54,11 +54,6 @@ struct Result: Codable, Identifiable {
     }
 }
 
-enum OriginalLanguage: String, Codable {
-    case ar = "ar"
-    case en = "en"
-    case es = "es"
-}
 
 
 

@@ -43,7 +43,6 @@ final class GenresVM: ObservableObject {
             throw URLError(.badServerResponse)
         }
         let dataDecode = try JSONDecoder().decode(Genres.self, from: data)
-        print(dataDecode)
         return dataDecode.genres
     }
 

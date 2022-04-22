@@ -19,7 +19,6 @@ struct ContentView: View {
     //private var items: FetchedResults<Item>
     
     @EnvironmentObject var moviePage: MoviePagesVM
-    @EnvironmentObject var genresModel: GenresVM
     
     var currentNumberPage: Int
 //    private var movies: [Result]
@@ -27,7 +26,7 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
            List {
-               ForEach(moviePage.currentPage?.results ?? MoviePagesVM().preview.results) { movie in
+               ForEach(moviePage.movies) { movie in
                     NavigationLink {
                         MovieDetailView(movie: movie)
 
@@ -35,7 +34,7 @@ struct ContentView: View {
                         AsyncImage(url: URL(string:"https://image.tmdb.org/t/p/w500\(movie.posterPath)")) { image in
                             image.resizable()
                                 .scaledToFit()
-                                .frame(width: 70, height: 70, alignment: .leading)
+                                .frame(width: 70, alignment: .leading)
                                 //.clipShape(Circle())
                             } placeholder: {
                                 Image(systemName: "film")
@@ -70,16 +69,13 @@ struct ContentView: View {
 //            Text("Select an item")
             Spacer()
         }
-    //TODO: Fix
         .task {
             do {
-                try await moviePage.carga(currentNumberPage)
-//                movies = moviePage.results
+                try await moviePage.load(currentNumberPage)
             } catch {
                 print("Error: \(error)")
             }
         }
-        //TODO: End Fix
     }
 /*
     private func addItem() {

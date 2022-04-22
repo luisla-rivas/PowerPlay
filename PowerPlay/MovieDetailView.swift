@@ -21,7 +21,7 @@ struct MovieDetailView: View {
                     Text(movie.name)
                         .font(.largeTitle)
                         .fontWeight(.bold)
-                    Text("\(movie.originalName) (\(movie.originalLanguage.rawValue))")
+                    Text("\(movie.originalName) (\(movie.originalLanguage))")
                     Text("\(movie.firstAirDate) (\((movie.originCountry.map{String($0)}).joined(separator: ", ")))").font(.body)
                     //Text((movie.originCountry.map{String($0)}).joined(separator: ", "))
                     //Text(dateFormatter.string(from: (movie.firstAirDate)))
