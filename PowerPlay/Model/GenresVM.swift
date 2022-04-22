@@ -14,6 +14,16 @@ final class GenresVM: ObservableObject {
 
     @Published var genres: [Genre] = []
     
+//    init() {
+//        Task.init {
+//            do {
+//                try await load()
+//                print("genresModel.load")
+//            } catch {
+//                print("Error: \(error)")
+//            }
+//        }
+//    }
   
     func load() async throws {
         do {
@@ -32,8 +42,9 @@ final class GenresVM: ObservableObject {
         guard (response as? HTTPURLResponse)?.statusCode == 200 else {
             throw URLError(.badServerResponse)
         }
-
-        return try JSONDecoder().decode([Genre].self, from: data)
+        let dataDecode = try JSONDecoder().decode(Genres.self, from: data)
+        print(dataDecode)
+        return dataDecode.genres
     }
 
     

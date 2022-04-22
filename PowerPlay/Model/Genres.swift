@@ -11,13 +11,13 @@
 
 import Foundation
 
-//// MARK: - Welcome
-//struct Welcome: Codable {
-//    let genres: [Genre]
-//}
+// MARK: - Welcome
+struct Genres: Codable {
+    let genres: [Genre]
+}
 
 // MARK: - Genre
-struct Genre: Codable {
+struct Genre: Codable, Identifiable {
     let id: Int
     let name: String
 }

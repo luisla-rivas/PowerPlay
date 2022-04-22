@@ -14,68 +14,60 @@ struct MovieDetailView: View {
     var movie:Result
     
     var body: some View {
-        NavigationView{
-            VStack {
-                ScrollView {
-                    VStack(alignment: .leading, spacing: 0) {
-                        Text(movie.name)
-                            .font(.largeTitle)
-                            .fontWeight(.bold)
-                        Text("\(movie.originalName) (\(movie.originalLanguage.rawValue))")
-                        Text("\(movie.firstAirDate) (\((movie.originCountry.map{String($0)}).joined(separator: ", ")))").font(.body)
-                        //Text((movie.originCountry.map{String($0)}).joined(separator: ", "))
-                        //Text(dateFormatter.string(from: (movie.firstAirDate)))
-                        ScrollView(.horizontal) {
-                            HStack(spacing: 10) {
-                                ForEach(movie.genreIDS, id: \.self) { genreCode in
-                                    Text("\(genresModel.genres.filter({$0.id == genreCode}).first?.name ?? "error")")
-                                        .font(.caption)
-                                        .padding(5)
-                                        .background(.quaternary)
-                                        .cornerRadius(8)
-    //                                    .border(Color.primary)
-                                }
-                                
-                                
-                            }
-                            
+        ScrollView {
+            VStack(alignment: .leading, spacing: 0) {
+                Text(movie.name)
+                    .font(.largeTitle)
+                    .fontWeight(.bold)
+                Text("\(movie.originalName) (\(movie.originalLanguage.rawValue))")
+                Text("\(movie.firstAirDate) (\((movie.originCountry.map{String($0)}).joined(separator: ", ")))").font(.body)
+                //Text((movie.originCountry.map{String($0)}).joined(separator: ", "))
+                //Text(dateFormatter.string(from: (movie.firstAirDate)))
+                ScrollView(.horizontal) {
+                    HStack(spacing: 10) {
+                        ForEach(movie.genreIDS, id: \.self) { genreCode in
+                            Text("\(genresModel.genres.filter({$0.id == genreCode}).first?.name ?? "error")")
+                                .font(.caption)
+                                .padding(5)
+                                .background(.quaternary)
+                                .cornerRadius(8)
+//                                    .border(Color.primary)
                         }
-                        .padding(.vertical)
-                        //Text((movie.genreIDS.map{String($0)}).joined(separator: ", ")).padding()
-                        HStack (alignment: .top, spacing: 10) {
-                            AsyncImage(url: URL(string:"https://image.tmdb.org/t/p/w500\(movie.posterPath)")) { image in
-                                image.resizable()
-                                    .scaledToFit()
-                                    .frame(width: 100, height: 200, alignment: .topLeading)
-                                    //.clipShape(Circle())
-                                } placeholder: {
-                                    Image(systemName: "film")
-                                        .font(.largeTitle)
-                                }
-     
-                            Text(movie.overview).font(.caption)
-                                Spacer()
-                            }
                         
                         
-                        PopularityAndRateView(movie: movie, showVotes: true)
-                            //.padding(.horizontal)
-                        Spacer()
                     }
                     
                 }
-                .padding()
+                .padding(.vertical)
+                //Text((movie.genreIDS.map{String($0)}).joined(separator: ", ")).padding()
+                HStack (alignment: .top, spacing: 10) {
+                    AsyncImage(url: URL(string:"https://image.tmdb.org/t/p/w500\(movie.posterPath)")) { image in
+                        image.resizable()
+                            .scaledToFit()
+                            .frame(width: 100, height: 200, alignment: .topLeading)
+                            //.clipShape(Circle())
+                        } placeholder: {
+                            Image(systemName: "film")
+                                .font(.largeTitle)
+                        }
 
+                    Text(movie.overview).font(.caption)
+                        Spacer()
+                    }
+                
+                
+                PopularityAndRateView(movie: movie, showVotes: true)
+                    //.padding(.horizontal)
+                Spacer()
             }
             
-//            .navigationTitle(movie.name)
-//            .navigationBarTitleDisplayMode(.inline)
-
         }
-        .task{
+        .padding()
+        .navigationTitle(movie.name)
+        .navigationBarTitleDisplayMode(.inline)
+        .task {
             do {
                 try await genresModel.load()
-                print("genresModel.load")
             } catch {
                 print("Error: \(error)")
             }

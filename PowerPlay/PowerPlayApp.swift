@@ -11,13 +11,17 @@ import SwiftUI
 struct PowerPlayApp: App {
     let persistenceController = PersistenceController.shared
     @StateObject var moviePage = MoviePagesVM()
-    let genres:[Genre] = GenresVM().preview
+    @StateObject var genres = GenresVM()
     
     var body: some Scene {
         WindowGroup {
+//            GenresListView()
+//                .environmentObject(genres)
+            
             ContentView(currentNumberPage: 1)
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
                 .environmentObject(moviePage)
+                .environmentObject(genres)
 
         }
     }
