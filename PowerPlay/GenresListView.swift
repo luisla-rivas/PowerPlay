@@ -16,7 +16,12 @@ struct GenresListView: View {
         NavigationView {
             
             List(genresModel.genres) { genre in
-                Text(genre.name)
+                HStack {
+                    Text(genre.name)
+                    Text("\(genre.id)")
+                        .font(.caption)
+                        .foregroundColor(.gray)
+                }
                     
             }
             .navigationTitle("Generos")

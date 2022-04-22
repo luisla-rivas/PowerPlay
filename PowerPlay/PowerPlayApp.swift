@@ -17,7 +17,7 @@ struct PowerPlayApp: App {
         WindowGroup {
 //            GenresListView()
 //                .environmentObject(genres)
-            
+//
             ContentView(currentNumberPage: 1)
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
                 .environmentObject(moviePage)
