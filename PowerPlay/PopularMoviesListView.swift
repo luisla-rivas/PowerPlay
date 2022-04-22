@@ -68,8 +68,8 @@ struct PopularMoviesListView: View {
                        Image(systemName: "chevron.left")
                    })
                    Spacer()
-                   //Text("\(moviePage.currentPage.page)/\(moviePage.currentPage.totalPages)")
-                   Text("\(currentNumberPage)")
+                   Text("\(moviePage.currentPage.page)/\(moviePage.currentPage.totalPages)")
+                   //Text("\(currentNumberPage)")
                    Spacer()
                 
                    Button(action: {
@@ -84,9 +84,7 @@ struct PopularMoviesListView: View {
            }
             //Spacer()
         }
-
-    
-        .task {
+        .task(id: currentNumberPage) {
             do {
                 try await moviePage.load(currentNumberPage)
                 print("moviePage.load")
