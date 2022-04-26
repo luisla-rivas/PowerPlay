@@ -50,6 +50,20 @@
 		B646A4242817CEB700B55543 /* PosterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A6F2F82812E19C004893CE /* PosterView.swift */; };
 		B6F80ED72817D1BD003510FC /* TabBarNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F80ED62817D1BD003510FC /* TabBarNavigationView.swift */; };
 		B6F80ED92817D266003510FC /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F80ED82817D266003510FC /* SettingsView.swift */; };
+		B6F80EDE2817D46F003510FC /* TabBarNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F80ED62817D1BD003510FC /* TabBarNavigationView.swift */; };
+		B6F80EDF2817D46F003510FC /* TabBarNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F80ED62817D1BD003510FC /* TabBarNavigationView.swift */; };
+		B6F80EE02817D4AF003510FC /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F80ED82817D266003510FC /* SettingsView.swift */; };
+		B6F80EE12817D4AF003510FC /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F80ED82817D266003510FC /* SettingsView.swift */; };
+		B6F80EE32817D8D3003510FC /* Language.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F80EE22817D8D3003510FC /* Language.swift */; };
+		B6F80EF22817E1DC003510FC /* LanguagesVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F80EF12817E1DC003510FC /* LanguagesVM.swift */; };
+		B6F80EF32817E1DC003510FC /* LanguagesVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F80EF12817E1DC003510FC /* LanguagesVM.swift */; };
+		B6F80EF42817E1DC003510FC /* LanguagesVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F80EF12817E1DC003510FC /* LanguagesVM.swift */; };
+		B6F80EF62817FA50003510FC /* LanguageVMTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F80EF52817FA50003510FC /* LanguageVMTest.swift */; };
+		B6F80EF72817FD58003510FC /* Language.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F80EE22817D8D3003510FC /* Language.swift */; };
+		B6F80EF82817FD58003510FC /* Language.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F80EE22817D8D3003510FC /* Language.swift */; };
+		B6F80EFA281803A6003510FC /* CodeLanguajes.json in Resources */ = {isa = PBXBuildFile; fileRef = B6F80EF9281803A6003510FC /* CodeLanguajes.json */; };
+		B6F80EFB281803A6003510FC /* CodeLanguajes.json in Resources */ = {isa = PBXBuildFile; fileRef = B6F80EF9281803A6003510FC /* CodeLanguajes.json */; };
+		B6F80EFC281803A6003510FC /* CodeLanguajes.json in Resources */ = {isa = PBXBuildFile; fileRef = B6F80EF9281803A6003510FC /* CodeLanguajes.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,6 +109,10 @@
 		B646A40F2817CA1B00B55543 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		B6F80ED62817D1BD003510FC /* TabBarNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarNavigationView.swift; sourceTree = "<group>"; };
 		B6F80ED82817D266003510FC /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		B6F80EE22817D8D3003510FC /* Language.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Language.swift; sourceTree = "<group>"; };
+		B6F80EF12817E1DC003510FC /* LanguagesVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguagesVM.swift; sourceTree = "<group>"; };
+		B6F80EF52817FA50003510FC /* LanguageVMTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageVMTest.swift; sourceTree = "<group>"; };
+		B6F80EF9281803A6003510FC /* CodeLanguajes.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = CodeLanguajes.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +168,7 @@
 				A0CA63E9280F0E5B0052DA57 /* Assets.xcassets */,
 				A0CA63EE280F0E5B0052DA57 /* Persistence.swift */,
 				A0CA6416280F14ED0052DA57 /* Model */,
+				B6F80EE82817DE8F003510FC /* Resources */,
 				A0CA63F0280F0E5B0052DA57 /* PowerPlay.xcdatamodeld */,
 				A0CA63EB280F0E5B0052DA57 /* Preview Content */,
 			);
@@ -169,6 +188,7 @@
 			children = (
 				A0CA63FB280F0E5B0052DA57 /* PowerPlayTests.swift */,
 				B646A40D2817215400B55543 /* GenresVMTest.swift */,
+				B6F80EF52817FA50003510FC /* LanguageVMTest.swift */,
 			);
 			path = PowerPlayTests;
 			sourceTree = "<group>";
@@ -189,6 +209,8 @@
 				A0CA6417280F1A490052DA57 /* MoviePagesVM.swift */,
 				A05D76DF2811709F00B6B865 /* Genres.swift */,
 				A05D76E1281170D800B6B865 /* GenresVM.swift */,
+				B6F80EE22817D8D3003510FC /* Language.swift */,
+				B6F80EF12817E1DC003510FC /* LanguagesVM.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -231,6 +253,15 @@
 				A0A6F2F82812E19C004893CE /* PosterView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		B6F80EE82817DE8F003510FC /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				B6F80EF9281803A6003510FC /* CodeLanguajes.json */,
+			);
+			name = Resources;
+			path = Model/Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -339,6 +370,7 @@
 			files = (
 				A0CA63ED280F0E5B0052DA57 /* Preview Assets.xcassets in Resources */,
 				A0CA63EA280F0E5B0052DA57 /* Assets.xcassets in Resources */,
+				B6F80EFA281803A6003510FC /* CodeLanguajes.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -346,6 +378,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B6F80EFB281803A6003510FC /* CodeLanguajes.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -353,6 +386,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B6F80EFC281803A6003510FC /* CodeLanguajes.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -373,9 +407,11 @@
 				B6F80ED72817D1BD003510FC /* TabBarNavigationView.swift in Sources */,
 				A05D76E2281170D800B6B865 /* GenresVM.swift in Sources */,
 				A0CA63F2280F0E5B0052DA57 /* PowerPlay.xcdatamodeld in Sources */,
+				B6F80EF22817E1DC003510FC /* LanguagesVM.swift in Sources */,
 				A0CA63E8280F0E580052DA57 /* PopularMoviesListView.swift in Sources */,
 				A0CA6418280F1A490052DA57 /* MoviePagesVM.swift in Sources */,
 				A0CA63E6280F0E580052DA57 /* PowerPlayApp.swift in Sources */,
+				B6F80EE32817D8D3003510FC /* Language.swift in Sources */,
 				A04B8B85281047B400F2677C /* MovieDetailView.swift in Sources */,
 				A0A6F2F92812E19C004893CE /* PosterView.swift in Sources */,
 			);
@@ -385,12 +421,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B6F80EE02817D4AF003510FC /* SettingsView.swift in Sources */,
 				B646A4232817CEB700B55543 /* PosterView.swift in Sources */,
 				A04B8B86281047B400F2677C /* MovieDetailView.swift in Sources */,
+				B6F80EF72817FD58003510FC /* Language.swift in Sources */,
 				B646A41D2817CEAA00B55543 /* PopularMoviesListView.swift in Sources */,
 				B646A4212817CEB300B55543 /* GenresListView.swift in Sources */,
+				B6F80EF62817FA50003510FC /* LanguageVMTest.swift in Sources */,
 				B646A41B2817CEA600B55543 /* PowerPlayApp.swift in Sources */,
+				B6F80EF32817E1DC003510FC /* LanguagesVM.swift in Sources */,
 				B646A41F2817CEB000B55543 /* PopularityAndRateView.swift in Sources */,
+				B6F80EDE2817D46F003510FC /* TabBarNavigationView.swift in Sources */,
 				B646A4112817CA1B00B55543 /* MainView.swift in Sources */,
 				A0CA63FC280F0E5B0052DA57 /* PowerPlayTests.swift in Sources */,
 				B646A4142817CE7E00B55543 /* Genres.swift in Sources */,
@@ -405,12 +446,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B6F80EE12817D4AF003510FC /* SettingsView.swift in Sources */,
 				B646A4242817CEB700B55543 /* PosterView.swift in Sources */,
 				A04B8B87281047B400F2677C /* MovieDetailView.swift in Sources */,
 				B646A41E2817CEAA00B55543 /* PopularMoviesListView.swift in Sources */,
 				B646A4222817CEB300B55543 /* GenresListView.swift in Sources */,
 				B646A41C2817CEA700B55543 /* PowerPlayApp.swift in Sources */,
+				B6F80EF42817E1DC003510FC /* LanguagesVM.swift in Sources */,
 				B646A4202817CEB100B55543 /* PopularityAndRateView.swift in Sources */,
+				B6F80EF82817FD58003510FC /* Language.swift in Sources */,
+				B6F80EDF2817D46F003510FC /* TabBarNavigationView.swift in Sources */,
 				B646A4152817CE8400B55543 /* Genres.swift in Sources */,
 				B646A4122817CA1B00B55543 /* MainView.swift in Sources */,
 				A0CA6408280F0E5B0052DA57 /* PowerPlayUITestsLaunchTests.swift in Sources */,

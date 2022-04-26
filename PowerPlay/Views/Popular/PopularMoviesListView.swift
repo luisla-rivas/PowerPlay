@@ -19,7 +19,7 @@ struct PopularMoviesListView: View {
     //private var items: FetchedResults<Item>
     
     @EnvironmentObject var moviePage: MoviePagesVM
-    //@EnvironmentObject var set    tings: SettingsFactory
+    //@EnvironmentObject var settings: SettingsFactory
     
     @State private var currentNumberPage: Int = 1
     

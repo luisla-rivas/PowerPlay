@@ -20,8 +20,9 @@ class GenresVMTest: XCTestCase {
         genres4Test = nil
     }
     
+    //Test URL API did not modify
     func testUrlGenre() throws {
-        XCTAssertEqual(genres4Test.urlGenre,urlGenreTest)
+        XCTAssertEqual(genres4Test.urlGenre,urlGenreTest,"Genres API URL modified")
     }
 
     func testLoadGenre() async throws {

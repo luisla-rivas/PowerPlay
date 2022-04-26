@@ -13,7 +13,7 @@ struct PowerPlayApp: App {
     
     @StateObject var moviePage = MoviePagesVM()
     @StateObject var genres = GenresVM()
-    
+    @StateObject var lang = LanguagesVM()
 
     var body: some Scene {
         WindowGroup {
@@ -25,6 +25,7 @@ struct PowerPlayApp: App {
 //                .environment(\.managedObjectContext, persistenceController.container.viewContext)
                 .environmentObject(moviePage)
                 .environmentObject(genres)
+                .environmentObject(lang)
         }
     }
 }
