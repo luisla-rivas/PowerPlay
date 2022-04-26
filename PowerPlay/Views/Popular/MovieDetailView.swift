@@ -8,12 +8,12 @@
 import SwiftUI
 
 struct MovieDetailView: View {
+    //    private var posterImage = Image(systemName: "film")
     
     @EnvironmentObject var genresModel: GenresVM
-//    @State var showModalView = false
+    @AppStorage("selectedLanguage", store: .standard) var selectedLanguage: String = "en"
     
     var movie:Result
-//    private var posterImage = Image(systemName: "film")
     
     var body: some View {
         GeometryReader { geometry in
@@ -30,7 +30,7 @@ struct MovieDetailView: View {
                     ScrollView(.horizontal) {
                         HStack(spacing: 10) {
                             ForEach(movie.genreIDS, id: \.self) { genreCode in
-                                Text("\(genresModel.genres.filter({$0.id == genreCode}).first?.name ?? "error")")
+                                Text("\(genresModel.genres.filter({$0.id == genreCode}).first?.name ?? String(genreCode))")
                                     .font(.caption)
                                     .padding(5)
                                     .background(.quaternary)
@@ -81,7 +81,7 @@ struct MovieDetailView: View {
         .navigationBarTitleDisplayMode(.inline)
         .task {
             do {
-                try await genresModel.load()
+                try await genresModel.load(language: selectedLanguage)
             } catch {
                 print("Error: \(error)")
             }

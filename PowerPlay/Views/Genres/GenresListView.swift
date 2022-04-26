@@ -10,6 +10,7 @@ import SwiftUI
 struct GenresListView: View {
     
     @EnvironmentObject var genresModel: GenresVM
+    @AppStorage("selectedLanguage", store: .standard) var selectedLanguage: String = "en"
     
     var body: some View {
         
@@ -28,7 +29,7 @@ struct GenresListView: View {
         }
         .task {
             do {
-                try await genresModel.load()
+                try await genresModel.load(language: selectedLanguage)
             } catch {
                 print("Error: \(error)")
             }

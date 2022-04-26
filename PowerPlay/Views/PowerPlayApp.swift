@@ -10,6 +10,7 @@ import SwiftUI
 @main
 struct PowerPlayApp: App {
 //    let persistenceController = PersistenceController.shared
+//    @AppStorage("apiKey") var apiKey: String = "c6aeee577586ba38e487b74dfede5deb"
     
     @StateObject var moviePage = MoviePagesVM()
     @StateObject var genres = GenresVM()
@@ -28,4 +29,8 @@ struct PowerPlayApp: App {
                 .environmentObject(lang)
         }
     }
+    func key() -> String {
+        return "c6aeee577586ba38e487b74dfede5deb"
+    }
+
 }

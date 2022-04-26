@@ -8,47 +8,32 @@
 import SwiftUI
 
 struct SettingsView: View {
-    
+    @AppStorage("selectedLanguage", store: .standard) var selectedLanguage: String = "en"
     @EnvironmentObject var languageModel: LanguagesVM
-    
     
     var body: some View {
         NavigationView {
             List {
-                Picker("Language", selection: $languageModel.selectedLanguage) {
+                Picker("Language", selection: $selectedLanguage) {
                     ForEach(languageModel.easyLanguages) { availableLanguage in
-                        Text(availableLanguage.name).tag(availableLanguage)// as AvailableLanguage)
+                        HStack {
+                            Text(availableLanguage.name)
+//                                .foregroundColor(.primary)
+//                            Text(availableLanguage.nativeName)
+//                            Spacer()
+//                                .foregroundColor(.secondary)
+//                            Text(availableLanguage.id)
+//                                .foregroundColor(.secondary)
+                            
+                        }.tag(availableLanguage.id)
                     }
                 }
             }
-//            List(languageModel.easyLanguages) { availableLanguage in
-//                    HStack {
-//                        Text(availableLanguage.name)
-//                        Spacer()
-//                        Text("\(availableLanguage.id)")
-//                            .font(.caption)
-//                            .foregroundColor(.gray)
-//                        Spacer()
-//                        Text(availableLanguage.nativeName)
-//
-//                    }
-//
-//            }
             .navigationTitle("Settings")
         }
-
-        }
+    }
 
 }
-
-////                Text("Language")
-////                Picker("Language", selection: $languageModel.selec) {
-////                    ForEach(lang.availableLanguages) {
-////                        availableLanguage in
-////                        Text(availableLanguage.name)
-////                    }
-////                }
-
 
 struct SettingsView_Previews: PreviewProvider {
     static var previews: some View {

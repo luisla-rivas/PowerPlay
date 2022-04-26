@@ -10,16 +10,16 @@ import Combine
 
 final class MoviePagesVM: ObservableObject {
     private let defaultPage = MoviePage(page: 1, results: [], totalPages: 1, totalResults: 0)
-    private let urlTMDB = "https://api.themoviedb.org/3/tv/popular?api_key=c6aeee577586ba38e487b74dfede5deb&language=en-US&page="
+    private let urlTMDB = "https://api.themoviedb.org/3/tv/popular?"
+    private let apiKey = "c6aeee577586ba38e487b74dfede5deb"
 //    private var currentPage: MoviePage? = nil
     
     @Published var currentPage: MoviePage = MoviePage(page: 1, results: [], totalPages: 1, totalResults: 0)
 //    @Published var movies: [Result] = []
-
     
-    func load(_ pageNum: Int) async throws {
+    func load(_ pageNum: Int, language: String) async throws {
         do {
-            currentPage = try await cargaMoviePage(pageNum)
+            currentPage = try await cargaMoviePage(pageNum, language: language)
             //movies = try await loadMoviePage(pageNum)
 
             
@@ -28,8 +28,9 @@ final class MoviePagesVM: ObservableObject {
         }
     }
     
-    func cargaMoviePage(_ pagNum: Int) async throws -> MoviePage {
-        guard let url = URL(string: urlTMDB+"\(pagNum)") else {
+    func cargaMoviePage(_ pagNum: Int, language: String) async throws -> MoviePage {
+        
+        guard let url = URL(string: urlTMDB+"api_key=\(apiKey)&language=\(language)&page=\(pagNum)") else {
             return defaultPage
         }
         let (data, response) = try await URLSession.shared.data(from: url)

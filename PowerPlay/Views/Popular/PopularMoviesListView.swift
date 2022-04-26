@@ -8,6 +8,7 @@
 import SwiftUI
 import CoreData
 
+
 struct PopularMoviesListView: View {
 //    @Environment(\.managedObjectContext) private var viewContext
 //
@@ -17,9 +18,8 @@ struct PopularMoviesListView: View {
 //        sortDescriptors: [NSSortDescriptor(keyPath: \Item.timestamp, ascending: true)],
 //        animation: .default)
     //private var items: FetchedResults<Item>
-    
     @EnvironmentObject var moviePage: MoviePagesVM
-    //@EnvironmentObject var settings: SettingsFactory
+    @AppStorage("selectedLanguage", store: .standard) var selectedLanguage: String = "en"
     
     @State private var currentNumberPage: Int = 1
     
@@ -86,10 +86,11 @@ struct PopularMoviesListView: View {
         }
         .task(id: currentNumberPage) {
             do {
-                try await moviePage.load(currentNumberPage)
-                print("moviePage.load")
+                try await moviePage.load(currentNumberPage,
+                                language: selectedLanguage)
+                //print("moviePage.load")
             } catch {
-                print("Error: \(error)")
+                print("Error in task PopularMovies: \(error)")
             }
         }
     }

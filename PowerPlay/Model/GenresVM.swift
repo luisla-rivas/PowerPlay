@@ -10,8 +10,9 @@ import Combine
 
 final class GenresVM: ObservableObject {
     
-    private(set) var urlGenre = "https://api.themoviedb.org/3/genre/movie/list?api_key=c6aeee577586ba38e487b74dfede5deb&language=en-US"
-
+    private(set) var urlGenre = "https://api.themoviedb.org/3/genre/movie/list?"
+    private let apiKey = "c6aeee577586ba38e487b74dfede5deb"
+    
     @Published var genres: [Genre] = []
     
 //    init() {
@@ -25,17 +26,18 @@ final class GenresVM: ObservableObject {
 //        }
 //    }
   
-    func load() async throws {
+    func load(language: String) async throws {
         do {
-            genres = try await loadGenres()
+            genres = try await loadGenres(language: language)
 
         } catch {
             print("Error at loading \(error)")
         }
     }
 
-    private func loadGenres() async throws -> [Genre] {
-        guard let url = URL(string: urlGenre) else {
+    private func loadGenres(language: String) async throws -> [Genre] {
+        let urlComplete = urlGenre+"api_key=\(apiKey)&language=\(language)"
+        guard let url = URL(string: urlComplete) else {
             return []
         }
         let (data, response) = try await URLSession.shared.data(from: url)
