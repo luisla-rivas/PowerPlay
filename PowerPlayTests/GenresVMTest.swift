@@ -20,10 +20,9 @@ class GenresVMTest: XCTestCase {
         genres4Test = nil
     }
     
-//    TO-DO: - Fix
-//    func testUrlGenre() throws {
-//        XCTAssertEqual(genres4Test.urlGenre,urlGenreTest)
-//    }
+    func testUrlGenre() throws {
+        XCTAssertEqual(genres4Test.urlGenre,urlGenreTest)
+    }
 
     func testLoadGenre() async throws {
     //        XCTAssertEqual(genres4Test.urlGenre,urlGenreTest)

@@ -9,7 +9,7 @@ import SwiftUI
 
 @main
 struct PowerPlayApp: App {
-    let persistenceController = PersistenceController.shared
+//    let persistenceController = PersistenceController.shared
     
     @StateObject var moviePage = MoviePagesVM()
     @StateObject var genres = GenresVM()
@@ -20,9 +20,9 @@ struct PowerPlayApp: App {
 //            GenresListView()
 //                .environmentObject(genres)
 
-            PopularMoviesListView()
+            MainView()
                 .preferredColorScheme(.light)
-                .environment(\.managedObjectContext, persistenceController.container.viewContext)
+//                .environment(\.managedObjectContext, persistenceController.container.viewContext)
                 .environmentObject(moviePage)
                 .environmentObject(genres)
         }

@@ -10,7 +10,7 @@ import Combine
 
 final class GenresVM: ObservableObject {
     
-    private let urlGenre = "https://api.themoviedb.org/3/genre/movie/list?api_key=c6aeee577586ba38e487b74dfede5deb&language=en-US"
+    private(set) var urlGenre = "https://api.themoviedb.org/3/genre/movie/list?api_key=c6aeee577586ba38e487b74dfede5deb&language=en-US"
 
     @Published var genres: [Genre] = []
     
