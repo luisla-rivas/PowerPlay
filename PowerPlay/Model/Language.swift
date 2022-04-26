@@ -28,5 +28,15 @@ struct AvailableLanguage: Codable, Identifiable, Hashable {
     let name: String
     let nativeName: String
     
+    init(id: String, name: String, nativeName: String) {
+        self.id = id
+        self.name = name
+        self.nativeName = nativeName
+    }
     
+    init(){
+        self.id = "en-US"
+        self.name = "English"
+        self.nativeName = "English"
+    }
 }

@@ -26,17 +26,18 @@ class LanguageVMTest: XCTestCase {
         XCTAssertEqual(language4Test.jsonLanguajes,filename,"Language Filename modified")
     }
     
-    func testCargaOK() throws {
+    func testLoadLanguages() throws {
         let bundle = Bundle.main
         let url = try XCTUnwrap(bundle.url(forResource: filename, withExtension: "json"), "Languagues file is not reachable")
         XCTAssertNoThrow(try Data(contentsOf: url))
         let jsonData = try Data(contentsOf: url)
-        print("DataJSON: \(jsonData)")
+        
         let languages = try JSONDecoder().decode(
             LanguageDict.self, from: jsonData)
         XCTAssertEqual(languages.count, 182)
         XCTAssertEqual(languages["ve"]!.name, "Venda")
         XCTAssertEqual(languages["es"]!.name, "Spanish; Castilian")
+       
         let availableLanguages = languages.keys.map({
             AvailableLanguage(id: $0, name: languages[$0]!.name, nativeName: languages[$0]!.nativeName)}).sorted { $0.name < $1.name }
         XCTAssertEqual(availableLanguages.count, 182)

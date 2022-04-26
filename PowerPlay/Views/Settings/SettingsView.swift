@@ -8,35 +8,47 @@
 import SwiftUI
 
 struct SettingsView: View {
-    @EnvironmentObject var lang: LanguagesVM
     
-//    @AppStorage("selectedLanguage", store: .standard) var selectedLanguage: String = "en-EN" //lang.defaultLanguage.id
+    @EnvironmentObject var languageModel: LanguagesVM
     
-    @State private var selected: AvailableLanguage = AvailableLanguage(id: "en-EN", name: "English", nativeName: "English")
     
     var body: some View {
-        //List() {
-            ScrollView {
-                
-                List {
-                    Text("\(lang.availableLanguages.count)")
-                    ForEach(lang.availableLanguages) {
-                        availableLanguage in
-                        Text(availableLanguage.name)
+        NavigationView {
+            List {
+                Picker("Language", selection: $languageModel.selectedLanguage) {
+                    ForEach(languageModel.easyLanguages) { availableLanguage in
+                        Text(availableLanguage.name).tag(availableLanguage)// as AvailableLanguage)
                     }
                 }
-//                Text("Language")
-//                Picker("Language", selection: $selected) {
-//                    ForEach(lang.availableLanguages) {
-//                        availableLanguage in
-//                        Text(availableLanguage.name)
-//                    }
-//                }
-                
             }
-        //}
-    }
+//            List(languageModel.easyLanguages) { availableLanguage in
+//                    HStack {
+//                        Text(availableLanguage.name)
+//                        Spacer()
+//                        Text("\(availableLanguage.id)")
+//                            .font(.caption)
+//                            .foregroundColor(.gray)
+//                        Spacer()
+//                        Text(availableLanguage.nativeName)
+//
+//                    }
+//
+//            }
+            .navigationTitle("Settings")
+        }
+
+        }
+
 }
+
+////                Text("Language")
+////                Picker("Language", selection: $languageModel.selec) {
+////                    ForEach(lang.availableLanguages) {
+////                        availableLanguage in
+////                        Text(availableLanguage.name)
+////                    }
+////                }
+
 
 struct SettingsView_Previews: PreviewProvider {
     static var previews: some View {
