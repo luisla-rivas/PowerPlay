@@ -26,6 +26,17 @@
 		A0CA6415280F14BC0052DA57 /* MoviePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CA6414280F14BC0052DA57 /* MoviePage.swift */; };
 		A0CA6418280F1A490052DA57 /* MoviePagesVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CA6417280F1A490052DA57 /* MoviePagesVM.swift */; };
 		A0DBB89328107588002670EA /* PopularityAndRateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0DBB89228107588002670EA /* PopularityAndRateView.swift */; };
+		B6346EDF281931DD00F170A5 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = B6346EDE281931DD00F170A5 /* Realm */; };
+		B6346EE1281931DD00F170A5 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = B6346EE0281931DD00F170A5 /* RealmSwift */; };
+		B6346EE32819358200F170A5 /* RealmMoviePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6346EE22819358200F170A5 /* RealmMoviePage.swift */; };
+		B6346EE42819358200F170A5 /* RealmMoviePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6346EE22819358200F170A5 /* RealmMoviePage.swift */; };
+		B6346EE52819358200F170A5 /* RealmMoviePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6346EE22819358200F170A5 /* RealmMoviePage.swift */; };
+		B6346EE7281935AA00F170A5 /* RealmGenre.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6346EE6281935AA00F170A5 /* RealmGenre.swift */; };
+		B6346EE8281935AA00F170A5 /* RealmGenre.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6346EE6281935AA00F170A5 /* RealmGenre.swift */; };
+		B6346EE9281935AA00F170A5 /* RealmGenre.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6346EE6281935AA00F170A5 /* RealmGenre.swift */; };
+		B6346EEB281939FE00F170A5 /* RealmMovie.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6346EEA281939FE00F170A5 /* RealmMovie.swift */; };
+		B6346EEC281939FE00F170A5 /* RealmMovie.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6346EEA281939FE00F170A5 /* RealmMovie.swift */; };
+		B6346EED281939FE00F170A5 /* RealmMovie.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6346EEA281939FE00F170A5 /* RealmMovie.swift */; };
 		B646A40E2817215400B55543 /* GenresVMTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B646A40D2817215400B55543 /* GenresVMTest.swift */; };
 		B646A4102817CA1B00B55543 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B646A40F2817CA1B00B55543 /* MainView.swift */; };
 		B646A4112817CA1B00B55543 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B646A40F2817CA1B00B55543 /* MainView.swift */; };
@@ -105,6 +116,9 @@
 		A0CA6414280F14BC0052DA57 /* MoviePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviePage.swift; sourceTree = "<group>"; };
 		A0CA6417280F1A490052DA57 /* MoviePagesVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviePagesVM.swift; sourceTree = "<group>"; };
 		A0DBB89228107588002670EA /* PopularityAndRateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularityAndRateView.swift; sourceTree = "<group>"; };
+		B6346EE22819358200F170A5 /* RealmMoviePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmMoviePage.swift; sourceTree = "<group>"; };
+		B6346EE6281935AA00F170A5 /* RealmGenre.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmGenre.swift; sourceTree = "<group>"; };
+		B6346EEA281939FE00F170A5 /* RealmMovie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmMovie.swift; sourceTree = "<group>"; };
 		B646A40D2817215400B55543 /* GenresVMTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenresVMTest.swift; sourceTree = "<group>"; };
 		B646A40F2817CA1B00B55543 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		B6F80ED62817D1BD003510FC /* TabBarNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarNavigationView.swift; sourceTree = "<group>"; };
@@ -120,6 +134,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B6346EE1281931DD00F170A5 /* RealmSwift in Frameworks */,
+				B6346EDF281931DD00F170A5 /* Realm in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -205,6 +221,9 @@
 		A0CA6416280F14ED0052DA57 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				B6346EE22819358200F170A5 /* RealmMoviePage.swift */,
+				B6346EEA281939FE00F170A5 /* RealmMovie.swift */,
+				B6346EE6281935AA00F170A5 /* RealmGenre.swift */,
 				A0CA6414280F14BC0052DA57 /* MoviePage.swift */,
 				A0CA6417280F1A490052DA57 /* MoviePagesVM.swift */,
 				A05D76DF2811709F00B6B865 /* Genres.swift */,
@@ -280,6 +299,10 @@
 			dependencies = (
 			);
 			name = PowerPlay;
+			packageProductDependencies = (
+				B6346EDE281931DD00F170A5 /* Realm */,
+				B6346EE0281931DD00F170A5 /* RealmSwift */,
+			);
 			productName = PowerPlay;
 			productReference = A0CA63E2280F0E580052DA57 /* PowerPlay.app */;
 			productType = "com.apple.product-type.application";
@@ -352,6 +375,9 @@
 				Base,
 			);
 			mainGroup = A0CA63D9280F0E580052DA57;
+			packageReferences = (
+				B6346EDD281931DD00F170A5 /* XCRemoteSwiftPackageReference "realm-swift" */,
+			);
 			productRefGroup = A0CA63E3280F0E580052DA57 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -397,12 +423,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B6346EEB281939FE00F170A5 /* RealmMovie.swift in Sources */,
 				B6F80ED92817D266003510FC /* SettingsView.swift in Sources */,
+				B6346EE32819358200F170A5 /* RealmMoviePage.swift in Sources */,
 				A05D76E0281170A000B6B865 /* Genres.swift in Sources */,
 				B646A4102817CA1B00B55543 /* MainView.swift in Sources */,
 				A0CA6415280F14BC0052DA57 /* MoviePage.swift in Sources */,
 				A08CD7552812901400929427 /* GenresListView.swift in Sources */,
 				A0DBB89328107588002670EA /* PopularityAndRateView.swift in Sources */,
+				B6346EE7281935AA00F170A5 /* RealmGenre.swift in Sources */,
 				A0CA63EF280F0E5B0052DA57 /* Persistence.swift in Sources */,
 				B6F80ED72817D1BD003510FC /* TabBarNavigationView.swift in Sources */,
 				A05D76E2281170D800B6B865 /* GenresVM.swift in Sources */,
@@ -424,6 +453,7 @@
 				B6F80EE02817D4AF003510FC /* SettingsView.swift in Sources */,
 				B646A4232817CEB700B55543 /* PosterView.swift in Sources */,
 				A04B8B86281047B400F2677C /* MovieDetailView.swift in Sources */,
+				B6346EEC281939FE00F170A5 /* RealmMovie.swift in Sources */,
 				B6F80EF72817FD58003510FC /* Language.swift in Sources */,
 				B646A41D2817CEAA00B55543 /* PopularMoviesListView.swift in Sources */,
 				B646A4212817CEB300B55543 /* GenresListView.swift in Sources */,
@@ -434,9 +464,11 @@
 				B6F80EDE2817D46F003510FC /* TabBarNavigationView.swift in Sources */,
 				B646A4112817CA1B00B55543 /* MainView.swift in Sources */,
 				A0CA63FC280F0E5B0052DA57 /* PowerPlayTests.swift in Sources */,
+				B6346EE8281935AA00F170A5 /* RealmGenre.swift in Sources */,
 				B646A4142817CE7E00B55543 /* Genres.swift in Sources */,
 				B646A4172817CE8C00B55543 /* MoviePagesVM.swift in Sources */,
 				B646A4132817CA2300B55543 /* GenresVM.swift in Sources */,
+				B6346EE42819358200F170A5 /* RealmMoviePage.swift in Sources */,
 				B646A40E2817215400B55543 /* GenresVMTest.swift in Sources */,
 				B646A4192817CE8F00B55543 /* MoviePage.swift in Sources */,
 			);
@@ -446,12 +478,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B6346EED281939FE00F170A5 /* RealmMovie.swift in Sources */,
 				B6F80EE12817D4AF003510FC /* SettingsView.swift in Sources */,
+				B6346EE52819358200F170A5 /* RealmMoviePage.swift in Sources */,
 				B646A4242817CEB700B55543 /* PosterView.swift in Sources */,
 				A04B8B87281047B400F2677C /* MovieDetailView.swift in Sources */,
 				B646A41E2817CEAA00B55543 /* PopularMoviesListView.swift in Sources */,
 				B646A4222817CEB300B55543 /* GenresListView.swift in Sources */,
 				B646A41C2817CEA700B55543 /* PowerPlayApp.swift in Sources */,
+				B6346EE9281935AA00F170A5 /* RealmGenre.swift in Sources */,
 				B6F80EF42817E1DC003510FC /* LanguagesVM.swift in Sources */,
 				B646A4202817CEB100B55543 /* PopularityAndRateView.swift in Sources */,
 				B6F80EF82817FD58003510FC /* Language.swift in Sources */,
@@ -772,6 +807,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		B6346EDD281931DD00F170A5 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-swift.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		B6346EDE281931DD00F170A5 /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B6346EDD281931DD00F170A5 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = Realm;
+		};
+		B6346EE0281931DD00F170A5 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B6346EDD281931DD00F170A5 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		A0CA63F0280F0E5B0052DA57 /* PowerPlay.xcdatamodeld */ = {

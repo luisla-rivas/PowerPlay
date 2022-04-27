@@ -6,12 +6,13 @@
 //
 
 import SwiftUI
+import RealmSwift
 
 @main
-struct PowerPlayApp: App {
+struct PowerPlayApp: SwiftUI.App {
 //    let persistenceController = PersistenceController.shared
 //    @AppStorage("apiKey") var apiKey: String = "c6aeee577586ba38e487b74dfede5deb"
-    
+
     @StateObject var moviePage = MoviePagesVM()
     @StateObject var genres = GenresVM()
     @StateObject var lang = LanguagesVM()
@@ -29,8 +30,8 @@ struct PowerPlayApp: App {
                 .environmentObject(lang)
         }
     }
-    func key() -> String {
-        return "c6aeee577586ba38e487b74dfede5deb"
-    }
+//    func key() -> String {
+//        return "c6aeee577586ba38e487b74dfede5deb"
+//    }
 
 }
