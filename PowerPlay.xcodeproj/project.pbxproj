@@ -40,6 +40,9 @@
 		B6346EEF2819458900F170A5 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6346EEE2819458900F170A5 /* Helper.swift */; };
 		B6346EF02819458900F170A5 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6346EEE2819458900F170A5 /* Helper.swift */; };
 		B6346EF12819458900F170A5 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6346EEE2819458900F170A5 /* Helper.swift */; };
+		B6346EF328195A0A00F170A5 /* OfflinePopularMoviesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6346EF228195A0A00F170A5 /* OfflinePopularMoviesListView.swift */; };
+		B6346EF428195A0A00F170A5 /* OfflinePopularMoviesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6346EF228195A0A00F170A5 /* OfflinePopularMoviesListView.swift */; };
+		B6346EF528195A0A00F170A5 /* OfflinePopularMoviesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6346EF228195A0A00F170A5 /* OfflinePopularMoviesListView.swift */; };
 		B646A40E2817215400B55543 /* GenresVMTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B646A40D2817215400B55543 /* GenresVMTest.swift */; };
 		B646A4102817CA1B00B55543 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B646A40F2817CA1B00B55543 /* MainView.swift */; };
 		B646A4112817CA1B00B55543 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B646A40F2817CA1B00B55543 /* MainView.swift */; };
@@ -123,6 +126,7 @@
 		B6346EE6281935AA00F170A5 /* RealmGenre.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmGenre.swift; sourceTree = "<group>"; };
 		B6346EEA281939FE00F170A5 /* RealmMovie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmMovie.swift; sourceTree = "<group>"; };
 		B6346EEE2819458900F170A5 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
+		B6346EF228195A0A00F170A5 /* OfflinePopularMoviesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfflinePopularMoviesListView.swift; sourceTree = "<group>"; };
 		B646A40D2817215400B55543 /* GenresVMTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenresVMTest.swift; sourceTree = "<group>"; };
 		B646A40F2817CA1B00B55543 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		B6F80ED62817D1BD003510FC /* TabBarNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarNavigationView.swift; sourceTree = "<group>"; };
@@ -251,6 +255,7 @@
 			isa = PBXGroup;
 			children = (
 				A0CA63E7280F0E580052DA57 /* PopularMoviesListView.swift */,
+				B6346EF228195A0A00F170A5 /* OfflinePopularMoviesListView.swift */,
 				A04B8B84281047B400F2677C /* MovieDetailView.swift */,
 				A0DBB89228107588002670EA /* PopularityAndRateView.swift */,
 			);
@@ -437,6 +442,7 @@
 				A08CD7552812901400929427 /* GenresListView.swift in Sources */,
 				A0DBB89328107588002670EA /* PopularityAndRateView.swift in Sources */,
 				B6346EE7281935AA00F170A5 /* RealmGenre.swift in Sources */,
+				B6346EF328195A0A00F170A5 /* OfflinePopularMoviesListView.swift in Sources */,
 				A0CA63EF280F0E5B0052DA57 /* Persistence.swift in Sources */,
 				B6F80ED72817D1BD003510FC /* TabBarNavigationView.swift in Sources */,
 				A05D76E2281170D800B6B865 /* GenresVM.swift in Sources */,
@@ -478,6 +484,7 @@
 				B6346EE42819358200F170A5 /* RealmMoviePage.swift in Sources */,
 				B646A40E2817215400B55543 /* GenresVMTest.swift in Sources */,
 				B646A4192817CE8F00B55543 /* MoviePage.swift in Sources */,
+				B6346EF428195A0A00F170A5 /* OfflinePopularMoviesListView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -494,6 +501,7 @@
 				B646A4222817CEB300B55543 /* GenresListView.swift in Sources */,
 				B646A41C2817CEA700B55543 /* PowerPlayApp.swift in Sources */,
 				B6346EE9281935AA00F170A5 /* RealmGenre.swift in Sources */,
+				B6346EF528195A0A00F170A5 /* OfflinePopularMoviesListView.swift in Sources */,
 				B6F80EF42817E1DC003510FC /* LanguagesVM.swift in Sources */,
 				B646A4202817CEB100B55543 /* PopularityAndRateView.swift in Sources */,
 				B6F80EF82817FD58003510FC /* Language.swift in Sources */,

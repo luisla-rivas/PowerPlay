@@ -12,16 +12,25 @@ enum TabItem {
 }
 
 struct TabBarNavigationView: View {
-
+  @AppStorage("isOffline", store: .standard) var isOffline: Bool = false
   @State private var selection: TabItem = .popular
 
   var body: some View {
     TabView(selection: $selection) {
-        PopularMoviesListView()
-            .tabItem {
-                Label("Popular", systemImage: "list.and.film")
-                }
-            .tag(TabItem.popular)
+        if !isOffline {
+            PopularMoviesListView()
+                .tabItem {
+                    Label("Popular", systemImage: "list.and.film")
+                    }
+                .tag(TabItem.popular)
+
+        } else {
+            OfflinePopularMoviesListView()
+                .tabItem {
+                    Label("Popular", systemImage: "list.and.film")
+                    }
+                .tag(TabItem.popular)
+        }
         GenresListView()
             .tabItem {
                 Label("Genre", systemImage: "film")

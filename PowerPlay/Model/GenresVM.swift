@@ -20,6 +20,7 @@ class GenresVM: ObservableObject {
             let urlComplete = urlGenre+"api_key=\(apiKey)&language=\(language)"
             let decodeGenres: Genres = try await fetchData(urlComplete)
             genres = decodeGenres.genres
+            
         } catch {
             print("Error at loading \(error)")
         }

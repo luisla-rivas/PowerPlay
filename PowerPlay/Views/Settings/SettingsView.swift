@@ -9,6 +9,7 @@ import SwiftUI
 
 struct SettingsView: View {
     @AppStorage("selectedLanguage", store: .standard) var selectedLanguage: String = "en"
+    @AppStorage("isOffline", store: .standard) var isOffline: Bool = false
     @EnvironmentObject var languageModel: LanguagesVM
     
     var body: some View {
@@ -27,6 +28,9 @@ struct SettingsView: View {
                             
                         }.tag(availableLanguage.id)
                     }
+                }
+                Toggle(isOn: $isOffline) {
+                    Text("Mode Offline")
                 }
             }
             .navigationTitle("Settings")
