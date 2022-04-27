@@ -19,9 +19,6 @@ struct PowerPlayApp: SwiftUI.App {
 
     var body: some Scene {
         WindowGroup {
-//            GenresListView()
-//                .environmentObject(genres)
-
             MainView()
                 .preferredColorScheme(.light)
 //                .environment(\.managedObjectContext, persistenceController.container.viewContext)

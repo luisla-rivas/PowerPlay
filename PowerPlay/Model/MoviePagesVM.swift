@@ -8,6 +8,7 @@
 import Foundation
 import Combine
 
+
 final class MoviePagesVM: ObservableObject {
     private let defaultPage = MoviePage(page: 1, results: [], totalPages: 1, totalResults: 0)
     private let urlTMDB = "https://api.themoviedb.org/3/tv/popular?"

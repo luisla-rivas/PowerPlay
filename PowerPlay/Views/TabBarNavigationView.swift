@@ -8,7 +8,7 @@
 import SwiftUI
 
 enum TabItem {
-  case popular, setting
+  case popular, genres, setting
 }
 
 struct TabBarNavigationView: View {
@@ -22,6 +22,11 @@ struct TabBarNavigationView: View {
                 Label("Popular", systemImage: "list.and.film")
                 }
             .tag(TabItem.popular)
+        GenresListView()
+            .tabItem {
+                Label("Genre", systemImage: "film")
+                }
+            .tag(TabItem.genres)
         
         SettingsView()
             .tabItem {

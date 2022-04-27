@@ -37,6 +37,9 @@
 		B6346EEB281939FE00F170A5 /* RealmMovie.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6346EEA281939FE00F170A5 /* RealmMovie.swift */; };
 		B6346EEC281939FE00F170A5 /* RealmMovie.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6346EEA281939FE00F170A5 /* RealmMovie.swift */; };
 		B6346EED281939FE00F170A5 /* RealmMovie.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6346EEA281939FE00F170A5 /* RealmMovie.swift */; };
+		B6346EEF2819458900F170A5 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6346EEE2819458900F170A5 /* Helper.swift */; };
+		B6346EF02819458900F170A5 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6346EEE2819458900F170A5 /* Helper.swift */; };
+		B6346EF12819458900F170A5 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6346EEE2819458900F170A5 /* Helper.swift */; };
 		B646A40E2817215400B55543 /* GenresVMTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B646A40D2817215400B55543 /* GenresVMTest.swift */; };
 		B646A4102817CA1B00B55543 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B646A40F2817CA1B00B55543 /* MainView.swift */; };
 		B646A4112817CA1B00B55543 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B646A40F2817CA1B00B55543 /* MainView.swift */; };
@@ -119,6 +122,7 @@
 		B6346EE22819358200F170A5 /* RealmMoviePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmMoviePage.swift; sourceTree = "<group>"; };
 		B6346EE6281935AA00F170A5 /* RealmGenre.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmGenre.swift; sourceTree = "<group>"; };
 		B6346EEA281939FE00F170A5 /* RealmMovie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmMovie.swift; sourceTree = "<group>"; };
+		B6346EEE2819458900F170A5 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		B646A40D2817215400B55543 /* GenresVMTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenresVMTest.swift; sourceTree = "<group>"; };
 		B646A40F2817CA1B00B55543 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		B6F80ED62817D1BD003510FC /* TabBarNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarNavigationView.swift; sourceTree = "<group>"; };
@@ -221,6 +225,7 @@
 		A0CA6416280F14ED0052DA57 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				B6346EEE2819458900F170A5 /* Helper.swift */,
 				B6346EE22819358200F170A5 /* RealmMoviePage.swift */,
 				B6346EEA281939FE00F170A5 /* RealmMovie.swift */,
 				B6346EE6281935AA00F170A5 /* RealmGenre.swift */,
@@ -439,6 +444,7 @@
 				B6F80EF22817E1DC003510FC /* LanguagesVM.swift in Sources */,
 				A0CA63E8280F0E580052DA57 /* PopularMoviesListView.swift in Sources */,
 				A0CA6418280F1A490052DA57 /* MoviePagesVM.swift in Sources */,
+				B6346EEF2819458900F170A5 /* Helper.swift in Sources */,
 				A0CA63E6280F0E580052DA57 /* PowerPlayApp.swift in Sources */,
 				B6F80EE32817D8D3003510FC /* Language.swift in Sources */,
 				A04B8B85281047B400F2677C /* MovieDetailView.swift in Sources */,
@@ -459,6 +465,7 @@
 				B646A4212817CEB300B55543 /* GenresListView.swift in Sources */,
 				B6F80EF62817FA50003510FC /* LanguageVMTest.swift in Sources */,
 				B646A41B2817CEA600B55543 /* PowerPlayApp.swift in Sources */,
+				B6346EF02819458900F170A5 /* Helper.swift in Sources */,
 				B6F80EF32817E1DC003510FC /* LanguagesVM.swift in Sources */,
 				B646A41F2817CEB000B55543 /* PopularityAndRateView.swift in Sources */,
 				B6F80EDE2817D46F003510FC /* TabBarNavigationView.swift in Sources */,
@@ -494,6 +501,7 @@
 				B646A4152817CE8400B55543 /* Genres.swift in Sources */,
 				B646A4122817CA1B00B55543 /* MainView.swift in Sources */,
 				A0CA6408280F0E5B0052DA57 /* PowerPlayUITestsLaunchTests.swift in Sources */,
+				B6346EF12819458900F170A5 /* Helper.swift in Sources */,
 				B646A4182817CE8D00B55543 /* MoviePagesVM.swift in Sources */,
 				B646A4162817CE8900B55543 /* GenresVM.swift in Sources */,
 				A0CA6406280F0E5B0052DA57 /* PowerPlayUITests.swift in Sources */,
