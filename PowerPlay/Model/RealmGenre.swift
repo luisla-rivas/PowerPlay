@@ -10,9 +10,8 @@ import RealmSwift
 
 final class RealmGenre: Object, ObjectKeyIdentifiable {
     @Persisted(primaryKey: true) var _id: ObjectId
-    @Persisted var language: String
     @Persisted var name: String
  
     /// The backlink to the `Group` this item is a part of.
-    @Persisted(originProperty: "genreIDS") var genreIDS: LinkingObjects<RealmMovie>
+//    @Persisted(originProperty: "genreIDS") var genreIDS: LinkingObjects<RealmMovie>
 }

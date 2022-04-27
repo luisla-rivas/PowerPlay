@@ -10,6 +10,7 @@ import SwiftUI
 struct SettingsView: View {
     @AppStorage("selectedLanguage", store: .standard) var selectedLanguage: String = "en"
     @AppStorage("isOffline", store: .standard) var isOffline: Bool = false
+    @AppStorage("preferredColorScheme") var preferredColorScheme: Int = 0
     @EnvironmentObject var languageModel: LanguagesVM
     
     var body: some View {
@@ -32,6 +33,12 @@ struct SettingsView: View {
                 Toggle(isOn: $isOffline) {
                     Text("Mode Offline")
                 }
+                Picker("Dark/Light mode", selection: $preferredColorScheme) {
+                    Text("Automatic").tag(0)
+                    Text("Light").tag(1)
+                    Text("Dark").tag(2)
+                }
+                
             }
             .navigationTitle("Settings")
         }

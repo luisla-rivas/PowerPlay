@@ -10,89 +10,88 @@ import RealmSwift
 
 struct OfflinePopularMoviesListView: View {
     @AppStorage("selectedLanguage", store: .standard) var selectedLanguage: String = "en"
-
-
+    
+    @EnvironmentObject var moviePage: MoviePagesVM
+    @ObservedResults(RealmMoviePage.self) var realmMoviePages
+    
     @State private var currentNumberPage: Int = 1
-//    @ObservedResults(RealmMoviePage.self) var realmMoviePages:
-
+    
     var body: some View {
         NavigationView {
-            Text("prueba")
-//           List {
-//               ForEach(realmMoviePage.results) { movie in
-//                    NavigationLink {
-//                        MovieDetailView(movie: movie)
-//
-//                    } label: {
-//                        AsyncImage(url: URL(string:"https://image.tmdb.org/t/p/w500\(movie.posterPath)")) { image in
-//                            image.resizable()
-//                                .scaledToFit()
-//                                .frame(width: 70, alignment: .leading)
-//                                //.clipShape(Circle())
-//                            } placeholder: {
-//                                Image(systemName: "film")
-//                                    .font(.largeTitle)
-//                                    .frame(width: 70, alignment: .center)
-//                            }
-//
-//
-////                        Text(item.timestamp!, formatter: itemFormatter)
-//                        VStack(alignment: .leading, spacing: 5) {
-//                            Text(movie.name)
-//                            Text(movie.originalName)
-//                                .font(.footnote)
-//                            PopularityAndRateView(movie: movie, showVotes: false)
-//                            .font(.footnote)
-//                        }
-//                    }
-//                }
-////                .onDelete(perform: deleteItems)
-//            }
-//           .navigationTitle("Popular movies")
-//           .navigationViewStyle(.automatic)
-//           .toolbar {
-//               ToolbarItemGroup(placement: .bottomBar) {
-//                   Button(action: {
-//                       if currentNumberPage > 1 {
-//                           currentNumberPage -= 1
-//
-//                       }
-//                   }, label: {
-//                       Image(systemName: "chevron.left")
-//                   })
-//                   Spacer()
-//                   Text("\(realmMoviePage.currentPage.page)/\(realmMoviePage.currentPage.totalPages)")
-//                   //Text("\(currentNumberPage)")
-//                   Spacer()
-//
-//                   Button(action: {
-//                       if currentNumberPage < realmMoviePage.currentPage.totalPages {
-//                           currentNumberPage += 1
-//                       }
-//                   }, label: {
-//                       Image(systemName: "chevron.right")
-//                   })
+           List {
+               ForEach(moviePage.currentPage.results) { movie in
+                    NavigationLink {
+                        MovieDetailView(movie: movie)
+
+                    } label: {
+                        AsyncImage(url: URL(string:"https://image.tmdb.org/t/p/w500\(movie.posterPath)")) { image in
+                            image.resizable()
+                                .scaledToFit()
+                                .frame(width: 70, alignment: .leading)
+                                //.clipShape(Circle())
+                            } placeholder: {
+                                Image(systemName: "film")
+                                    .font(.largeTitle)
+                                    .frame(width: 70, alignment: .center)
+                            }
+
+
+//                        Text(item.timestamp!, formatter: itemFormatter)
+                        VStack(alignment: .leading, spacing: 5) {
+                            Text(movie.name)
+                            Text(movie.originalName)
+                                .font(.footnote)
+                            PopularityAndRateView(movie: movie, showVotes: false)
+                            .font(.footnote)
+                        }
+                    }
+                }
+//                .onDelete(perform: deleteItems)
+            }
+//           .searchable(text: $searchFilter,
+//                       collection: $items,
+//                       keyPath: \.name) {
+//               ForEach(items) { itemsFiltered in
+//                   Text(itemsFiltered.name).searchCompletion(itemsFiltered.name)
 //               }
-//
 //           }
-//            //Spacer()
-//        }
-//        .task(id: currentNumberPage) {
-////            if !isOffline {
-//                do {
-//                    try await realmMoviePage.load(currentNumberPage,
-//                                    language: selectedLanguage)
-//                    //print("moviePage.load")
-//                } catch {
-//                    print("Error in task PopularMovies: \(error)")
-//                }
-////            } else {
-////                do {
-////                    let realmPageData = try realmMoviePage.first(where: $0.page == currentNumberPage )
-////                } catch {
-////                    print("Error in task PopularMovies: \(error)")
-////                }
-//            }
+           .navigationTitle("Popular movies")
+           .navigationViewStyle(.automatic)
+           .toolbar {
+               ToolbarItemGroup(placement: .bottomBar) {
+                   Button(action: {
+                       if currentNumberPage > 1 {
+                           currentNumberPage -= 1
+
+                       }
+                   }, label: {
+                       Image(systemName: "chevron.left")
+                   })
+                   Spacer()
+                   Text("\(currentNumberPage)/\(moviePage.currentPage.totalPages)")
+                   Spacer()
+
+                   Button(action: {
+                       if currentNumberPage < moviePage.currentPage.totalPages {
+                           currentNumberPage += 1
+                       }
+                   }, label: {
+                       Image(systemName: "chevron.right")
+                   })
+               }
+
+           }
+            //Spacer()
+        }
+        .task(id: currentNumberPage) {
+            let filterMoviePages = realmMoviePages.filter( {$0.language == selectedLanguage})
+            let totalNumPagesNum = filterMoviePages.count
+            if totalNumPagesNum > 0 {
+                moviePage.from(filterMoviePages[currentNumberPage-1],
+                           totalPages: filterMoviePages.count)
+            } else {
+                moviePage.emptyPage
+            }
         }
     }
 /*

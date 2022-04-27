@@ -31,29 +31,17 @@ struct TabBarNavigationView: View {
                     }
                 .tag(TabItem.popular)
         }
-        GenresListView()
-            .tabItem {
-                Label("Genre", systemImage: "film")
-                }
-            .tag(TabItem.genres)
+//        GenresListView()
+//            .tabItem {
+//                Label("Genre", systemImage: "film")
+//                }
+//            .tag(TabItem.genres)
         
         SettingsView()
             .tabItem {
                 Label("Settings", systemImage: "gear")
                 }
             .tag(TabItem.setting)
-        
-//        ReportView()
-//            .tabItem {
-//                Label("Reports", systemImage: "doc.text")
-//                }
-//            .tag(TabItem.report)
-//
-//        MoreView()
-//            .tabItem {
-//                Label("More", systemImage: "ellipsis")
-//                }
-//            .tag(TabItem.more)
     }
   }
 }

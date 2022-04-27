@@ -12,7 +12,9 @@ import RealmSwift
 /// Represents a collection of items.
 final class RealmMoviePage: Object, ObjectKeyIdentifiable {
     @Persisted(primaryKey: true) var _id: ObjectId
-    @Persisted var currentPage: Int
+    @Persisted var page: Int
+    @Persisted var language: String
+    @Persisted var fetchedDate = Date()
     @Persisted var results = RealmSwift.List<RealmMovie>()
 }
 

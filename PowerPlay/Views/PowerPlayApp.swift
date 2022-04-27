@@ -12,6 +12,7 @@ import RealmSwift
 struct PowerPlayApp: SwiftUI.App {
 //    let persistenceController = PersistenceController.shared
 //    @AppStorage("apiKey") var apiKey: String = "c6aeee577586ba38e487b74dfede5deb"
+    @AppStorage("preferredColorScheme") var preferredColorScheme: Int = 0
 
     @StateObject var moviePage = MoviePagesVM()
     @StateObject var genres = GenresVM()
@@ -20,15 +21,17 @@ struct PowerPlayApp: SwiftUI.App {
     var body: some Scene {
         WindowGroup {
             MainView()
-                .preferredColorScheme(.light)
+                .preferredColorScheme(ColorScheme.init(
+                    .init(rawValue: preferredColorScheme) ?? .light))
 //                .environment(\.managedObjectContext, persistenceController.container.viewContext)
                 .environmentObject(moviePage)
                 .environmentObject(genres)
                 .environmentObject(lang)
         }
     }
-//    func key() -> String {
-//        return "c6aeee577586ba38e487b74dfede5deb"
+    
+//    enum MyColorSchema: UIUserInterfaceStyle {
+//        typealias RawValue = String
+//        case light, dark, none
 //    }
-
 }

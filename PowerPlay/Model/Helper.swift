@@ -7,7 +7,7 @@
 
 import Foundation
 
-func load<T: Decodable>(_ filename: String) -> T {
+func load<T: Decodable>(_ filename: String) throws -> T {
     let data: Data
 
     guard let file = Bundle.main.url(forResource: filename, withExtension: nil)
@@ -24,7 +24,8 @@ func load<T: Decodable>(_ filename: String) -> T {
     do {
         return try JSONDecoder().decode(T.self, from: data)
     } catch {
-        fatalError("Couldn't parse \(filename) as \(T.self):\n\(error)")
+        print("Couldn't parse \(filename) as \(T.self):\n\(error)")
+        throw FetchError.badJSON
     }
 }
 
@@ -44,7 +45,9 @@ func load<T: Decodable>(_ filename: String) -> T {
      do {
          return try JSONDecoder().decode(T.self, from: data)
      } catch {
-         fatalError("Couldn't parse \(urlString) as \(T.self):\n\(error)")
+         
+         print("Couldn't parse \(urlString) as \(T.self):\n\(error)")
+         throw FetchError.badJSON
      }
 }
 

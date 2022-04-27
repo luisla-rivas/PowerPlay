@@ -21,7 +21,7 @@ struct PopularMoviesListView: View {
     @EnvironmentObject var moviePage: MoviePagesVM
     @AppStorage("selectedLanguage", store: .standard) var selectedLanguage: String = "en"
     
-    @State private var currentNumberPage: Int = 1
+    @State private var currentNumberPage: Int = 5
     
     var body: some View {
         NavigationView {
@@ -88,7 +88,7 @@ struct PopularMoviesListView: View {
             do {
                 try await moviePage.load(currentNumberPage,
                                 language: selectedLanguage)
-                //print("moviePage.load")
+                print("moviePage.load in PopularMoviesListView")
             } catch {
                 print("Error in task PopularMovies: \(error)")
             }

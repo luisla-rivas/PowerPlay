@@ -34,10 +34,6 @@ final class LanguagesVM: ObservableObject {
             let languages = try JSONDecoder().decode(LanguageDict.self, from: jsonData)
             self.availableLanguages = languages.keys.map({
                 AvailableLanguage(id: $0, name: languages[$0]!.name, nativeName: languages[$0]!.nativeName)}).sorted { $0.name < $1.name }
-//            self.selectedLanguage = AvailableLanguage(id: userDefaultLanguange,
-//                    name: languages[userDefaultLanguange]?.name ?? "Select",
-//                    nativeName: languages[userDefaultLanguange]?.nativeName ?? "Select")
-
         } catch {
             print("Loading error \(error)")
             availableLanguages = []

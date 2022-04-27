@@ -43,6 +43,9 @@
 		B6346EF328195A0A00F170A5 /* OfflinePopularMoviesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6346EF228195A0A00F170A5 /* OfflinePopularMoviesListView.swift */; };
 		B6346EF428195A0A00F170A5 /* OfflinePopularMoviesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6346EF228195A0A00F170A5 /* OfflinePopularMoviesListView.swift */; };
 		B6346EF528195A0A00F170A5 /* OfflinePopularMoviesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6346EF228195A0A00F170A5 /* OfflinePopularMoviesListView.swift */; };
+		B6346EF728196B1600F170A5 /* RealmPages.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6346EF628196B1600F170A5 /* RealmPages.swift */; };
+		B6346EF828196B1600F170A5 /* RealmPages.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6346EF628196B1600F170A5 /* RealmPages.swift */; };
+		B6346EF928196B1600F170A5 /* RealmPages.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6346EF628196B1600F170A5 /* RealmPages.swift */; };
 		B646A40E2817215400B55543 /* GenresVMTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B646A40D2817215400B55543 /* GenresVMTest.swift */; };
 		B646A4102817CA1B00B55543 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B646A40F2817CA1B00B55543 /* MainView.swift */; };
 		B646A4112817CA1B00B55543 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B646A40F2817CA1B00B55543 /* MainView.swift */; };
@@ -127,6 +130,7 @@
 		B6346EEA281939FE00F170A5 /* RealmMovie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmMovie.swift; sourceTree = "<group>"; };
 		B6346EEE2819458900F170A5 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		B6346EF228195A0A00F170A5 /* OfflinePopularMoviesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfflinePopularMoviesListView.swift; sourceTree = "<group>"; };
+		B6346EF628196B1600F170A5 /* RealmPages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmPages.swift; sourceTree = "<group>"; };
 		B646A40D2817215400B55543 /* GenresVMTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenresVMTest.swift; sourceTree = "<group>"; };
 		B646A40F2817CA1B00B55543 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		B6F80ED62817D1BD003510FC /* TabBarNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarNavigationView.swift; sourceTree = "<group>"; };
@@ -230,6 +234,7 @@
 			isa = PBXGroup;
 			children = (
 				B6346EEE2819458900F170A5 /* Helper.swift */,
+				B6346EF628196B1600F170A5 /* RealmPages.swift */,
 				B6346EE22819358200F170A5 /* RealmMoviePage.swift */,
 				B6346EEA281939FE00F170A5 /* RealmMovie.swift */,
 				B6346EE6281935AA00F170A5 /* RealmGenre.swift */,
@@ -450,6 +455,7 @@
 				B6F80EF22817E1DC003510FC /* LanguagesVM.swift in Sources */,
 				A0CA63E8280F0E580052DA57 /* PopularMoviesListView.swift in Sources */,
 				A0CA6418280F1A490052DA57 /* MoviePagesVM.swift in Sources */,
+				B6346EF728196B1600F170A5 /* RealmPages.swift in Sources */,
 				B6346EEF2819458900F170A5 /* Helper.swift in Sources */,
 				A0CA63E6280F0E580052DA57 /* PowerPlayApp.swift in Sources */,
 				B6F80EE32817D8D3003510FC /* Language.swift in Sources */,
@@ -466,6 +472,7 @@
 				B646A4232817CEB700B55543 /* PosterView.swift in Sources */,
 				A04B8B86281047B400F2677C /* MovieDetailView.swift in Sources */,
 				B6346EEC281939FE00F170A5 /* RealmMovie.swift in Sources */,
+				B6346EF828196B1600F170A5 /* RealmPages.swift in Sources */,
 				B6F80EF72817FD58003510FC /* Language.swift in Sources */,
 				B646A41D2817CEAA00B55543 /* PopularMoviesListView.swift in Sources */,
 				B646A4212817CEB300B55543 /* GenresListView.swift in Sources */,
@@ -509,6 +516,7 @@
 				B646A4152817CE8400B55543 /* Genres.swift in Sources */,
 				B646A4122817CA1B00B55543 /* MainView.swift in Sources */,
 				A0CA6408280F0E5B0052DA57 /* PowerPlayUITestsLaunchTests.swift in Sources */,
+				B6346EF928196B1600F170A5 /* RealmPages.swift in Sources */,
 				B6346EF12819458900F170A5 /* Helper.swift in Sources */,
 				B646A4182817CE8D00B55543 /* MoviePagesVM.swift in Sources */,
 				B646A4162817CE8900B55543 /* GenresVM.swift in Sources */,
@@ -661,7 +669,7 @@
 				INFOPLIST_FILE = PowerPlay/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -691,7 +699,7 @@
 				INFOPLIST_FILE = PowerPlay/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (

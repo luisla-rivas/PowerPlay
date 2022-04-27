@@ -12,7 +12,7 @@ final class RealmMovie: Object, ObjectKeyIdentifiable {
     @Persisted(primaryKey: true) var _id: ObjectId
     @Persisted var backdropPath: String?
     @Persisted var firstAirDate: String
-    @Persisted var genreIDS = RealmSwift.List<RealmGenre>()
+    @Persisted var genreIDS: Int //RealmSwift.List<RealmGenre>()
     @Persisted var idApi: Int
     @Persisted var name: String
     @Persisted var originCountry: String //no creo array para hacerlo mas facil

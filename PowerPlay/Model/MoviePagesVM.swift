@@ -7,23 +7,82 @@
 
 import Foundation
 import Combine
+import RealmSwift
+import SwiftUI
 
 
 final class MoviePagesVM: ObservableObject {
-    private let defaultPage = MoviePage(page: 1, results: [], totalPages: 1, totalResults: 0)
+    let realm = try! Realm()
+
+    let emptyPage = MoviePage(page: 1, results: [], totalPages: 1, totalResults: 0)
     private let urlTMDB = "https://api.themoviedb.org/3/tv/popular?"
     private let apiKey = "c6aeee577586ba38e487b74dfede5deb"
     
     @Published var currentPage: MoviePage = MoviePage(page: 1, results: [], totalPages: 1, totalResults: 0)
+    @ObservedResults(RealmMoviePage.self) var realmMoviePages
     
     func load(_ pageNum: Int, language: String) async throws {
         do {
             let urlComplete = "\(urlTMDB)api_key=\(apiKey)&language=\(language)&page=\(pageNum)"
             let decodePage: MoviePage = try await fetchData(urlComplete)
             currentPage = decodePage
+              
+            //Saving to Realm Database
+            print("User Realm User file location: \(realm.configuration.fileURL!.path)")
+            let isNotAlredySaved = (realm.objects(RealmMoviePage.self).filter( { $0.page == pageNum && $0.language == language}).count == 0)
+            if isNotAlredySaved {
+                let  newPage = RealmMoviePage()
+                newPage.page = decodePage.page
+                for movie in decodePage.results {
+                    let realmMovie = RealmMovie()
+                    realmMovie.backdropPath = movie.backdropPath
+                    realmMovie.idApi = movie.id
+                    realmMovie.name = movie.name
+                    realmMovie.originalName = movie.originalName
+                    realmMovie.originalLanguage = movie.originalLanguage
+                    realmMovie.originCountry = movie.originCountry.first ?? ""
+                    realmMovie.overview = movie.overview
+                    realmMovie.popularity = movie.popularity
+                    realmMovie.posterPath = movie.posterPath
+                    realmMovie.voteAverage = movie.voteAverage
+                    realmMovie.voteCount = movie.voteCount
+                    //FIXME: genreIDS debe ser un array
+                    realmMovie.genreIDS = movie.genreIDS.first ?? 0
+                    newPage.results.append(realmMovie)
+                }
+                newPage.language = language
+                $realmMoviePages.append(newPage)
+            }
+            
         } catch {
             print("Error at loading \(error)")
         }
+    }
+
+    func from (_ realmMoviePage: RealmMoviePage, totalPages: Int) {
+        var results = [Result]()
+        for movie in realmMoviePage.results {
+            let result = Result(backdropPath: movie.backdropPath,
+                                firstAirDate: movie.firstAirDate,
+                                genreIDS: [movie.genreIDS],
+                                id: movie.idApi,
+                                name: movie.name,
+                                originCountry: [movie.originCountry],
+                                originalLanguage: movie.originalLanguage,
+                                originalName: movie.originalName,
+                                overview: movie.overview,
+                                popularity: movie.popularity,
+                                posterPath: movie.posterPath,
+                                voteAverage: movie.voteAverage,
+                                voteCount: movie.voteCount)
+
+            results.append(result)
+        }
+                currentPage = MoviePage(page: realmMoviePage.page,
+                                results: results,
+                                totalPages: totalPages,
+                                totalResults: 0)
+
     }
     
     let preview:MoviePage = MoviePage(page: 1,
