@@ -13,47 +13,18 @@ final class MoviePagesVM: ObservableObject {
     private let defaultPage = MoviePage(page: 1, results: [], totalPages: 1, totalResults: 0)
     private let urlTMDB = "https://api.themoviedb.org/3/tv/popular?"
     private let apiKey = "c6aeee577586ba38e487b74dfede5deb"
-//    private var currentPage: MoviePage? = nil
     
     @Published var currentPage: MoviePage = MoviePage(page: 1, results: [], totalPages: 1, totalResults: 0)
-//    @Published var movies: [Result] = []
     
     func load(_ pageNum: Int, language: String) async throws {
         do {
-            currentPage = try await cargaMoviePage(pageNum, language: language)
-            //movies = try await loadMoviePage(pageNum)
-
-            
+            let urlComplete = "\(urlTMDB)api_key=\(apiKey)&language=\(language)&page=\(pageNum)"
+            let decodePage: MoviePage = try await fetchData(urlComplete)
+            currentPage = decodePage
         } catch {
             print("Error at loading \(error)")
         }
     }
-    
-    func cargaMoviePage(_ pagNum: Int, language: String) async throws -> MoviePage {
-        
-        guard let url = URL(string: urlTMDB+"api_key=\(apiKey)&language=\(language)&page=\(pagNum)") else {
-            return defaultPage
-        }
-        let (data, response) = try await URLSession.shared.data(from: url)
-        guard (response as? HTTPURLResponse)?.statusCode == 200 else {
-            throw URLError(.badServerResponse)
-        }
-              
-        return try JSONDecoder().decode(MoviePage.self, from: data)
-    }
-    
-//    func loadMoviePage(_ pagNum: Int) async throws -> [Result] {
-//        guard let url = URL(string: urlTMDB+"\(pagNum)") else {
-//            return []
-//        }
-//        let (data, response) = try await URLSession.shared.data(from: url)
-//        guard (response as? HTTPURLResponse)?.statusCode == 200 else {
-//            throw URLError(.badServerResponse)
-//        }
-//        let dataDecode = try JSONDecoder().decode(MoviePage.self, from: data)
-////        print("page: \(dataDecode.page), movies:\(dataDecode.results.count) ")
-//        return dataDecode.results
-//    }
     
     let preview:MoviePage = MoviePage(page: 1,
         results: [
