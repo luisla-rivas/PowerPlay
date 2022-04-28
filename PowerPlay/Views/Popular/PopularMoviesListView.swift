@@ -21,7 +21,7 @@ struct PopularMoviesListView: View {
     @EnvironmentObject var moviePage: MoviePagesVM
     @AppStorage("selectedLanguage", store: .standard) var selectedLanguage: String = "en"
     
-    @State private var currentNumberPage: Int = 5
+    @State private var currentNumberPage: Int = 1
     
     var body: some View {
         NavigationView {

@@ -15,10 +15,11 @@ struct MainView: View {
     @ViewBuilder
     var body: some View {
       #if os(iOS)
-      if horizontalSizeClass == .compact {
-        TabBarNavigationView()  // For iPhone
+        if horizontalSizeClass == .compact {
+            TabBarNavigationView()  // For iPhone
       }
       else {
+          TabBarNavigationView()
         //SidebarNavigationView()  // For iPad
       }
       #else
