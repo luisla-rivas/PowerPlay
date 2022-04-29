@@ -80,11 +80,7 @@ struct MovieDetailView: View {
         .navigationTitle(movie.name)
         .navigationBarTitleDisplayMode(.inline)
         .task {
-            do {
-                try await genresModel.load(language: selectedLanguage)
-            } catch {
-                print("Error: \(error)")
-            }
+            await genresModel.load(language: selectedLanguage)
         }
 
     }

@@ -15,12 +15,11 @@ class GenresVM: ObservableObject {
     
     @Published var genres: [Genre] = []
 
-    func load(language: String) async throws {
+    func load(language: String) async {
         do {
             let urlComplete = urlGenre+"api_key=\(apiKey)&language=\(language)"
             let decodeGenres: Genres = try await fetchData(urlComplete)
             genres = decodeGenres.genres
-            
         } catch {
             print("Error at loading \(error)")
         }

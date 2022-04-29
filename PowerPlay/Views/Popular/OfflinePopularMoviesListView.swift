@@ -87,10 +87,8 @@ struct OfflinePopularMoviesListView: View {
             let filterMoviePages = realmMoviePages.filter( {$0.language == selectedLanguage})
             let totalNumPagesNum = filterMoviePages.count
             if totalNumPagesNum > 0 {
-                moviePage.from(filterMoviePages[currentNumberPage-1],
+                moviePage.fromDataBase(filterMoviePages[currentNumberPage-1],
                            totalPages: filterMoviePages.count)
-            } else {
-                moviePage.emptyPage
             }
         }
     }
