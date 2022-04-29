@@ -28,11 +28,7 @@ struct GenresListView: View {
             .navigationTitle("Generos")
         }
         .task {
-            do {
-                try await genresModel.load(language: selectedLanguage)
-            } catch {
-                print("Error: \(error)")
-            }
+            await genresModel.load(language: selectedLanguage)
         }
     }
 }

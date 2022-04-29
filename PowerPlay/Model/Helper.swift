@@ -45,7 +45,6 @@ func load<T: Decodable>(_ filename: String) throws -> T {
      do {
          return try JSONDecoder().decode(T.self, from: data)
      } catch {
-         
          print("Couldn't parse \(urlString) as \(T.self):\n\(error)")
          throw FetchError.badJSON
      }

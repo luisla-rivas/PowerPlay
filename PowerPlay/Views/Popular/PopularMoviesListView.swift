@@ -85,13 +85,10 @@ struct PopularMoviesListView: View {
             //Spacer()
         }
         .task(id: currentNumberPage) {
-            do {
-                try await moviePage.load(currentNumberPage,
-                                language: selectedLanguage)
-                print("moviePage.load in PopularMoviesListView")
-            } catch {
-                print("Error in task PopularMovies: \(error)")
-            }
+            await moviePage.load(currentNumberPage,
+                            language: selectedLanguage)
+            //print("moviePage.load in PopularMoviesListView")
+
         }
     }
 /*
