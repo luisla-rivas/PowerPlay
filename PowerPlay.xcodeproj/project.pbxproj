@@ -12,6 +12,8 @@
 		A04B8B87281047B400F2677C /* MovieDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04B8B84281047B400F2677C /* MovieDetailView.swift */; };
 		A05D76E0281170A000B6B865 /* Genres.swift in Sources */ = {isa = PBXBuildFile; fileRef = A05D76DF2811709F00B6B865 /* Genres.swift */; };
 		A05D76E2281170D800B6B865 /* GenresVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = A05D76E1281170D800B6B865 /* GenresVM.swift */; };
+		A070099B2823B81500419E47 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A070099E2823B81500419E47 /* Localizable.strings */; };
+		A070099C2823B81500419E47 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A070099E2823B81500419E47 /* Localizable.strings */; };
 		A08CD7552812901400929427 /* GenresListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08CD7542812901400929427 /* GenresListView.swift */; };
 		A0A6F2F92812E19C004893CE /* PosterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A6F2F82812E19C004893CE /* PosterView.swift */; };
 		A0CA63E6280F0E580052DA57 /* PowerPlayApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CA63E5280F0E580052DA57 /* PowerPlayApp.swift */; };
@@ -104,6 +106,10 @@
 		A04B8B84281047B400F2677C /* MovieDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailView.swift; sourceTree = "<group>"; };
 		A05D76DF2811709F00B6B865 /* Genres.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Genres.swift; sourceTree = "<group>"; };
 		A05D76E1281170D800B6B865 /* GenresVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenresVM.swift; sourceTree = "<group>"; };
+		A070099D2823B81500419E47 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		A070099F2823B81900419E47 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		A07009A02823B81A00419E47 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
+		A07009A12823B81B00419E47 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		A08CD7542812901400929427 /* GenresListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenresListView.swift; sourceTree = "<group>"; };
 		A08CD7562812B1C400929427 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		A0A6F2F82812E19C004893CE /* PosterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PosterView.swift; sourceTree = "<group>"; };
@@ -239,6 +245,7 @@
 				A05D76E1281170D800B6B865 /* GenresVM.swift */,
 				B6F80EE22817D8D3003510FC /* Language.swift */,
 				B6F80EF12817E1DC003510FC /* LanguagesVM.swift */,
+				A070099E2823B81500419E47 /* Localizable.strings */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -383,6 +390,9 @@
 			knownRegions = (
 				en,
 				Base,
+				es,
+				fr,
+				de,
 			);
 			mainGroup = A0CA63D9280F0E580052DA57;
 			packageReferences = (
@@ -405,6 +415,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A0CA63ED280F0E5B0052DA57 /* Preview Assets.xcassets in Resources */,
+				A070099B2823B81500419E47 /* Localizable.strings in Resources */,
 				A0CA63EA280F0E5B0052DA57 /* Assets.xcassets in Resources */,
 				B6F80EFA281803A6003510FC /* CodeLanguajes.json in Resources */,
 			);
@@ -423,6 +434,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B6F80EFC281803A6003510FC /* CodeLanguajes.json in Resources */,
+				A070099C2823B81500419E47 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -531,6 +543,21 @@
 			targetProxy = A0CA6402280F0E5B0052DA57 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		A070099E2823B81500419E47 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A070099D2823B81500419E47 /* en */,
+				A070099F2823B81900419E47 /* fr */,
+				A07009A02823B81A00419E47 /* de */,
+				A07009A12823B81B00419E47 /* es */,
+			);
+			name = Localizable.strings;
+			path = PowerPlay;
+			sourceTree = SOURCE_ROOT;
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		A0CA6409280F0E5B0052DA57 /* Debug */ = {
@@ -653,7 +680,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 26;
 				DEVELOPMENT_ASSET_PATHS = "\"PowerPlay/Preview Content\"";
 				DEVELOPMENT_TEAM = 5LHT3Z587H;
 				ENABLE_PREVIEWS = YES;
@@ -668,7 +695,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.1;
+				MARKETING_VERSION = 2.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.luisla.PowerPlay;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -683,7 +710,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 26;
 				DEVELOPMENT_ASSET_PATHS = "\"PowerPlay/Preview Content\"";
 				DEVELOPMENT_TEAM = 5LHT3Z587H;
 				ENABLE_PREVIEWS = YES;
@@ -698,7 +725,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.1;
+				MARKETING_VERSION = 2.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.luisla.PowerPlay;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;

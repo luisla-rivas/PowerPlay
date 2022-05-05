@@ -13,19 +13,18 @@ struct PopularityAndRateView: View {
     var body: some View {
         VStack {
             HStack {
-                Text("Popularity: \(movie.popularity, specifier: "%.0f")")
+                Text("Popularity:")
+                Text("\(movie.popularity, specifier: "%.0f")")
                 Spacer()
                 Text("⭑").font(.title2).foregroundColor(.yellow).offset(x: 3, y: -2)
                 Text("\(movie.voteAverage, specifier: "%.1f") / 10")
-                
                 }
             if showVotes {
                 HStack {
                     Spacer()
-                    Text("Votes: \(movie.voteCount, specifier: "%.0d")")
-                        .foregroundColor(.secondary)
-                    
-                }
+                    Text("Votes:")
+                    Text("\(movie.voteCount, specifier: "%.0d")")
+                }.foregroundColor(.secondary)
             }
         }
     }

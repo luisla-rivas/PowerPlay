@@ -1,0 +1,32 @@
+/* 
+  Localizable.strings
+  PowerPlay
+
+  Created by Luis Lasierra on 5/5/22.
+  
+*/
+
+//TabBarNavigationView
+"Popular" = "Popular";
+"Genre" = "Genre";
+"Settings" = "Settings";
+
+//Popular/PopularListView
+"Popular movies" = "Popular movies";
+
+//Popular/OfflinePopularMoviesListView
+//"Popular movies" = "Popular movies";
+
+//Popular/MovieDetailView
+//
+
+//Popular/PopularityAndRateView
+"Popularity" = "Popularity";
+"Votes" = "Votes";
+
+//Settings
+"Language" = "Language";
+"Dark/Light mode" = "Dark/Light mode";
+"Automatic" = "Automatic";
+"Light" = "Light";
+"Dark" = "Dark";
